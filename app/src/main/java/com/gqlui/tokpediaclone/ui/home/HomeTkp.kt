@@ -2,9 +2,13 @@
 
 package com.gqlui.tokpediaclone.ui.home
 
+import android.util.Log
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.gestures.FlingBehavior
+import androidx.compose.foundation.gestures.ScrollableDefaults
+import androidx.compose.foundation.interaction.Interaction
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -17,6 +21,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
@@ -37,8 +42,16 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.rememberUpdatedState
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -66,6 +79,7 @@ import com.gqlui.tokpediaclone.data.model.RowHomeIc
 import com.gqlui.tokpediaclone.ui.components.TkpTopAppBar
 import com.gqlui.tokpediaclone.ui.theme.PrimaryColor
 import kotlin.math.absoluteValue
+import kotlin.time.Duration.Companion.microseconds
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -107,146 +121,6 @@ fun HomeTkp(
 }
 
 
-@Composable
-fun TopRowBar(
-    modifier: Modifier = Modifier
-) {
-    Column(
-        modifier = modifier
-            .height(130.dp)
-    ) {
-        Box(
-            modifier = modifier
-                .padding(horizontal = 12.dp)
-                .fillMaxWidth()
-                .height(20.dp), contentAlignment = Alignment.CenterStart
-        ) {
-            Row(modifier = modifier, horizontalArrangement = Arrangement.Center) {
-                Icon(
-                    imageVector = rememberVectorLocation(),
-                    contentDescription = "",
-                    modifier = modifier.size(15.dp),
-                    tint = Color.White
-                )
-                Spacer(modifier = modifier.width(4.dp))
-                Text(text = buildAnnotatedString {
-                    append("Dikirim ke")
-                    append(" ")
-                    append(
-                        AnnotatedString(
-                            text = "Chinatown, New York City",
-                            spanStyle = SpanStyle(
-                                fontWeight = FontWeight.Bold
-                            )
-                        )
-                    )
-                }, color = Color.White, fontSize = 12.sp)
-                Icon(
-                    imageVector = Icons.Default.KeyboardArrowDown,
-                    contentDescription = "",
-                    tint = Color.White
-                )
-            }
-        }
-        Card(
-            modifier = modifier
-                .clip(CircleShape)
-                .padding(horizontal = 12.dp, vertical = 10.dp)
-                .fillMaxWidth()
-                .height(80.dp),
-            colors = CardDefaults.cardColors(
-                containerColor = Color.White
-            )
-        ) {
-            Row(
-                modifier = modifier
-                    .padding(10.dp)
-                    .fillMaxSize(),
-                horizontalArrangement = Arrangement.SpaceBetween
-            ) {
-                Column {
-                    Row(modifier = modifier, verticalAlignment = Alignment.CenterVertically) {
-                        Image(
-                            painter = rememberAsyncImagePainter(model = "https://images.tokopedia.net/img/toppay/gopay-120x120.png"),
-                            contentDescription = "",
-                            modifier = modifier.size(20.dp)
-                        )
-                        Spacer(modifier = modifier.width(4.dp))
-                        Text(text = "GoPay", fontSize = 12.sp)
-                    }
-                    Text(
-                        text = "Rp10.000",
-                        fontWeight = FontWeight.Bold,
-                        fontFamily = FontFamily.SansSerif,
-                        style = TextStyle(
-                            letterSpacing = 0.sp
-                        )
-                    )
-                    Text(
-                        text = "0 Coins", fontSize = 12.sp, color = Color.Gray,
-                        style = TextStyle(
-                            letterSpacing = 0.sp
-                        )
-                    )
-                }
-                Column {
-                    Row(modifier = modifier, verticalAlignment = Alignment.CenterVertically) {
-                        Image(
-                            painter = rememberAsyncImagePainter(model = "https://images.tokopedia.net/img/HThbdi/2023/03/17/rewards_silver_filled.png"),
-                            contentDescription = "",
-                            modifier = modifier.size(20.dp)
-                        )
-                        Spacer(modifier = modifier.width(4.dp))
-                        Text(text = "Silver", fontSize = 12.sp)
-                    }
-                    Text(
-                        text = "Silver",
-                        fontWeight = FontWeight.Bold,
-                        fontFamily = FontFamily.SansSerif,
-                        style = TextStyle(
-                            letterSpacing = 0.sp
-                        )
-                    )
-                    Text(
-                        text = "0 Kupon Baru", fontSize = 12.sp, color = Color.Gray,
-                        style = TextStyle(
-                            letterSpacing = 0.sp
-                        )
-                    )
-                }
-                Column {
-                    Row(modifier = modifier, verticalAlignment = Alignment.CenterVertically) {
-                        Image(
-                            painter = rememberAsyncImagePainter(model = "https://images.tokopedia.net/img/plus/homepage/balancewidget/march2023/plus.png"),
-                            contentDescription = "",
-                            modifier = modifier.size(20.dp)
-                        )
-                        Spacer(modifier = modifier.width(4.dp))
-                        Text(text = "pluS", fontSize = 12.sp)
-                    }
-                    Text(
-                        text = "Coba 1 Bulan",
-                        fontWeight = FontWeight.Bold,
-                        fontFamily = FontFamily.Serif,
-                        style = TextStyle(
-                            letterSpacing = 0.sp
-                        )
-                    )
-                    Text(
-                        text = "Langganan, Yuk!",
-                        fontSize = 12.sp,
-                        color = PrimaryColor,
-                        fontWeight = FontWeight.Bold,
-                        style = TextStyle(
-                            letterSpacing = 0.sp
-                        )
-                    )
-                }
-            }
-        }
-    }
-}
-
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun HomeContent(
@@ -257,8 +131,6 @@ fun HomeContent(
     continueCheckState: List<RowHomeIc>
 ) {
     val lazyListState = rememberLazyListState()
-    val scope = rememberCoroutineScope()
-
     Column(
         modifier = modifier
             .clip(RoundedCornerShape(topStart = 12.dp, topEnd = 12.dp))
@@ -305,16 +177,16 @@ fun HomeContent(
                     .height(275.dp)
                     .width(140.dp)
                     .graphicsLayer {
+                        alpha =
+                            if (lazyListState.firstVisibleItemScrollOffset < 500 && lazyListState.firstVisibleItemIndex == 0) 100f / lazyListState.firstVisibleItemScrollOffset else 0.5f
                         translationX =
-                            if (lazyListState.firstVisibleItemScrollOffset >= 100) 0f - lazyListState.firstVisibleItemScrollOffset else 0f
-//                        translationX =
-//                            if (lazyListState.firstVisibleItemScrollOffset >= 100) -100f else 0f - lazyListState.firstVisibleItemScrollOffset
+                            if (lazyListState.firstVisibleItemScrollOffset < 100 && lazyListState.firstVisibleItemIndex == 0) 0f - lazyListState.firstVisibleItemScrollOffset else -100f
                     },
                 contentScale = ContentScale.FillWidth,
             )
             LazyRow(
                 contentPadding = PaddingValues(), modifier = modifier,
-                state = lazyListState
+                state = lazyListState,
             ) {
                 item {
                     Box(
@@ -323,12 +195,12 @@ fun HomeContent(
                             .width(140.dp)
                     )
                 }
-                items(continueCheckState, key = { it.image }) {
+                items(continueCheckState, key = { it.image }) { data ->
                     CardItemDiscount(
                         paddingEnd = 10.dp,
-                        imageUrl = it.image,
-                        title = it.title,
-                        subTitle = it.subTitle,
+                        imageUrl = data.image,
+                        title = data.title,
+                        subTitle = data.subTitle,
                         paddingTop = 12.dp
                     )
                 }
