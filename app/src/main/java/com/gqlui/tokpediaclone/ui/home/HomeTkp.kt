@@ -178,7 +178,7 @@ fun HomeContent(
                     .width(140.dp)
                     .graphicsLayer {
                         alpha =
-                            if (lazyListState.firstVisibleItemScrollOffset < 500 && lazyListState.firstVisibleItemIndex == 0) 100f / lazyListState.firstVisibleItemScrollOffset else 0.5f
+                            if (lazyListState.firstVisibleItemScrollOffset < 500 && lazyListState.firstVisibleItemIndex == 0) 120f / lazyListState.firstVisibleItemScrollOffset else 0.5f
                         translationX =
                             if (lazyListState.firstVisibleItemScrollOffset < 100 && lazyListState.firstVisibleItemIndex == 0) 0f - lazyListState.firstVisibleItemScrollOffset else -100f
                     },
