@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -72,44 +73,48 @@ fun BoxLazyRow(
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Text(text = "Berakhir dalam", fontSize = 12.sp)
-            Box(
-                modifier = modifier
-                    .padding(end = 100.dp)
-                    .clip(CircleShape)
-                    .width(100.dp)
-                    .height(20.dp)
-                    .background(color = Color(0xFFE02954)),
-                contentAlignment = Alignment.TopStart
-            ) {
-                Row(
-                    modifier = modifier.fillMaxSize(),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.SpaceBetween
+            Row {
+                Text(text = "Berakhir dalam", fontSize = 12.sp)
+                Spacer(modifier = modifier.width(8.dp))
+                Box(
+                    modifier = modifier
+                        .padding(end = 10.dp)
+                        .clip(CircleShape)
+//                    .width(100.dp)
+                        .height(20.dp)
+                        .background(color = Color(0xFFE02954)),
+                    contentAlignment = Alignment.Center
                 ) {
-                    Icon(
-                        imageVector = rememberClockVector(),
-                        contentDescription = "",
-                        tint = Color.White,
-                        modifier = modifier.padding(start = 6.dp)
-                    )
-                    Text(
-                        text = buildAnnotatedString {
-                            append("01")
-                            append(" : ")
-                            append("27")
-                            append(" : ")
-                            if (timeSecond < 10)
-                                append(" 0$timeSecond ")
-                            else
-                                append(" $timeSecond ")
-                        }, fontSize = 12.sp, color = Color.White, fontWeight = FontWeight.Bold,
-                        modifier = modifier.padding(end = 6.dp)
-                    )
+                    Row(
+                        modifier = modifier,
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
+                        Icon(
+                            imageVector = rememberClockVector(),
+                            contentDescription = "",
+                            tint = Color.White,
+                            modifier = modifier.padding(horizontal = 6.dp)
+                        )
+                        Text(
+                            text = buildAnnotatedString {
+                                append("01")
+                                append(" : ")
+                                append("27")
+                                append(" : ")
+                                if (timeSecond < 10)
+                                    append(" 0$timeSecond ")
+                                else
+                                    append(" $timeSecond ")
+                            }, fontSize = 12.sp, color = Color.White, fontWeight = FontWeight.Bold,
+                            modifier = modifier.padding(end = 6.dp)
+                        )
+                    }
                 }
             }
+
             TextButton(onClick = { /*TODO*/ }) {
-                Text(text = "Lihat Semua", fontWeight = FontWeight.Bold, color = PrimaryColor)
+                Text(text = "Lihat Semua", fontWeight = FontWeight.Bold, color = PrimaryColor, fontSize = 13.sp)
             }
         }
         Box(
