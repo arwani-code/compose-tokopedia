@@ -13,6 +13,53 @@ import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 
 @Composable
+fun rememberClockVector(): ImageVector {
+    return remember {
+        ImageVector.Builder(
+            name = "vector",
+            defaultWidth = 16.dp,
+            defaultHeight = 16.dp,
+            viewportWidth = 24f,
+            viewportHeight = 24f
+        ).apply {
+            path(
+                fill = SolidColor(Color(0xFFFFFFFF)),
+                fillAlpha = 1.0f,
+                stroke = null,
+                strokeAlpha = 1.0f,
+                strokeLineWidth = 1.0f,
+                strokeLineCap = StrokeCap.Butt,
+                strokeLineJoin = StrokeJoin.Miter,
+                strokeLineMiter = 1.0f,
+                pathFillType = PathFillType.EvenOdd
+            ) {
+                moveTo(6.584f, 3.882f)
+                arcTo(9.75f, 9.75f, 0f, isMoreThanHalf = false, isPositiveArc = true, 12f, 2.24f)
+                arcTo(9.76f, 9.76f, 0f, isMoreThanHalf = false, isPositiveArc = true, 21.75f, 12f)
+                arcTo(9.75f, 9.75f, 0f, isMoreThanHalf = true, isPositiveArc = true, 6.584f, 3.882f)
+                close()
+                moveToRelative(0.832f, 14.967f)
+                arcTo(8.25f, 8.25f, 0f, isMoreThanHalf = false, isPositiveArc = false, 12f, 20.24f)
+                arcTo(8.26f, 8.26f, 0f, isMoreThanHalf = false, isPositiveArc = false, 20.25f, 12f)
+                arcToRelative(8.25f, 8.25f, 0f, isMoreThanHalf = true, isPositiveArc = false, -12.834f, 6.849f)
+                close()
+                moveToRelative(5.334f, -7.599f)
+                horizontalLineTo(16f)
+                arcToRelative(0.75f, 0.75f, 0f, isMoreThanHalf = true, isPositiveArc = true, 0f, 1.5f)
+                horizontalLineToRelative(-4f)
+                arcToRelative(0.76f, 0.76f, 0f, isMoreThanHalf = false, isPositiveArc = true, -0.75f, -0.75f)
+                verticalLineTo(7f)
+                arcToRelative(0.75f, 0.75f, 0f, isMoreThanHalf = true, isPositiveArc = true, 1.5f, 0f)
+                verticalLineToRelative(4.25f)
+                close()
+            }
+        }.build()
+    }
+}
+
+
+
+@Composable
 fun rememberVectorLocation(): ImageVector {
     return remember {
         ImageVector.Builder(

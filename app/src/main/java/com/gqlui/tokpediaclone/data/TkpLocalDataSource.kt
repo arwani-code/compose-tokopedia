@@ -54,7 +54,9 @@ class TkpLocalDataSource @Inject constructor() {
     )
     val imagePager = listOf(
         "https://images.tokopedia.net/img/cache/1200/NXCtjv/2023/6/30/74501321-54c7-4375-a98d-224742be0e5e.jpg.webp",
-        "https://images.tokopedia.net/img/cache/1200/NXCtjv/2023/7/15/e3107915-c428-49fb-9fc2-182d3f972d11.jpg"
+        "https://images.tokopedia.net/img/cache/1200/NXCtjv/2023/7/15/e3107915-c428-49fb-9fc2-182d3f972d11.jpg",
+        "https://images.tokopedia.net/img/cache/500/VxWOnu/2023/7/18/46a4dc59-9657-44ac-a33e-b867fb8203aa.jpg.webp?ect=4g",
+        "https://images.tokopedia.net/img/cache/500/VxWOnu/2023/7/20/e5220c19-44c9-4038-b2b8-7771d21bf9f3.jpg.webp?ect=4g"
     )
     val continueCheck = listOf(
         RowHomeIc(
@@ -91,6 +93,64 @@ class TkpLocalDataSource @Inject constructor() {
             image = "https://images.tokopedia.net/img/cache/200-square/VqbcmM/2023/3/1/5a8fcf65-92b4-4d42-8606-f76714c685b3.png.webp?ect=4g",
             title = "Pasta Gigi",
             subTitle = "Baik lihat"
+        ),
+    )
+    val discountSpecial = listOf(
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/VqbcmM/2023/6/10/f3eeca96-4714-49bf-8be7-cce44c1b5663.jpg.webp?ect=4g",
+            title = "Rp 25.000",
+            discount = "64%",
+            price = "Rp 70.000",
+            progressIndicator = "70"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/VqbcmM/2021/8/8/90dd1a77-203e-49f3-9580-704f79ab5f9e.jpg.webp?ect=4g",
+            title = "Rp 34.000",
+            discount = "43%",
+            price = "Rp 60.000",
+            progressIndicator = "80"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/VqbcmM/2022/5/8/130b301d-e02e-480b-a115-46bb48b91ae0.jpg.webp?ect=4g",
+            title = "Rp 118.000",
+            discount = "58%",
+            price = "Rp 280.000",
+            progressIndicator = "90"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/VqbcmM/2021/10/11/1168a76f-7c47-4ffb-8bd0-494fe7d19ff4.jpg.webp?ect=4g",
+            title = "Rp 898.999",
+            discount = "25%",
+            price = "Rp 1.119.000",
+            progressIndicator = "85"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/VqbcmM/2022/11/28/772cdbbf-f8e5-43c2-acd1-ed075c87764e.jpg.webp?ect=4g",
+            title = "Rp 50.864",
+            discount = "32%",
+            price = "Rp 75.240",
+            progressIndicator = "90"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/VqbcmM/2023/4/3/70e6cabb-b9a9-4c42-aa4e-52937a7df701.jpg.webp?ect=4g",
+            title = "Rp 102.960",
+            discount = "22%",
+            price = "Rp 132.000",
+            progressIndicator = "70"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/VqbcmM/2023/2/10/4b23f52a-3ad0-48a2-a44f-6b38a911fefd.jpg.webp?ect=4g",
+            title = "Rp 73.500",
+            discount = "26%",
+            price = "Rp 99.000",
+            progressIndicator = "80"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/hDjmkQ/2022/3/22/c04d23af-dcd7-4361-b7c5-e352d1dc2ecc.jpg.webp?ect=4g",
+            title = "Rp 44.594",
+            discount = "25%",
+            price = "Rp 59.300",
+            progressIndicator = "80"
         ),
     )
 }

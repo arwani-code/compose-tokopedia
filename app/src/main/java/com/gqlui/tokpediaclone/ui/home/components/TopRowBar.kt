@@ -1,4 +1,4 @@
-package com.gqlui.tokpediaclone.ui.home
+package com.gqlui.tokpediaclone.ui.home.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement

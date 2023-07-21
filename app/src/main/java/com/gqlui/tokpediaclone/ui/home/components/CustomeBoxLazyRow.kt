@@ -1,0 +1,161 @@
+package com.gqlui.tokpediaclone.ui.home.components
+
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.Divider
+import androidx.compose.material3.Icon
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import coil.compose.rememberAsyncImagePainter
+import com.gqlui.tokpediaclone.base.rememberClockVector
+import com.gqlui.tokpediaclone.data.model.RowHomeIc
+import com.gqlui.tokpediaclone.ui.theme.PrimaryColor
+import kotlinx.coroutines.delay
+
+@Composable
+fun BoxLazyRow(
+    modifier: Modifier = Modifier,
+    items: List<RowHomeIc>
+) {
+    val lazyListState = rememberLazyListState()
+    var timeSecond by remember {
+        mutableIntStateOf(60)
+    }
+    LaunchedEffect(key1 = timeSecond, block = {
+        delay(1000)
+        when (timeSecond) {
+            0 -> timeSecond = 60
+        }
+        timeSecond--
+    })
+    Column(modifier = modifier.padding(vertical = 16.dp)) {
+        Text(
+            text = "Kejar Diskon Spesial",
+            fontWeight = FontWeight.Bold,
+            modifier = modifier.padding(start = 16.dp, end = 16.dp, top = 16.dp),
+        )
+        Row(
+            modifier = modifier
+                .height(50.dp)
+                .fillMaxWidth()
+                .padding(start = 16.dp),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(text = "Berakhir dalam", fontSize = 12.sp)
+            Box(
+                modifier = modifier
+                    .padding(end = 100.dp)
+                    .clip(CircleShape)
+                    .width(100.dp)
+                    .height(20.dp)
+                    .background(color = Color(0xFFE02954)),
+                contentAlignment = Alignment.TopStart
+            ) {
+                Row(
+                    modifier = modifier.fillMaxSize(),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    Icon(
+                        imageVector = rememberClockVector(),
+                        contentDescription = "",
+                        tint = Color.White,
+                        modifier = modifier.padding(start = 6.dp)
+                    )
+                    Text(
+                        text = buildAnnotatedString {
+                            append("01")
+                            append(" : ")
+                            append("27")
+                            append(" : ")
+                            if (timeSecond < 10)
+                                append(" 0$timeSecond ")
+                            else
+                                append(" $timeSecond ")
+                        }, fontSize = 12.sp, color = Color.White, fontWeight = FontWeight.Bold,
+                        modifier = modifier.padding(end = 6.dp)
+                    )
+                }
+            }
+            TextButton(onClick = { /*TODO*/ }) {
+                Text(text = "Lihat Semua", fontWeight = FontWeight.Bold, color = PrimaryColor)
+            }
+        }
+        Box(
+            modifier = modifier
+                .height(270.dp)
+                .fillMaxWidth()
+                .background(
+                    Color(0xFF73E53F)
+                ),
+        ) {
+            Image(
+                painter = rememberAsyncImagePainter(model = "https://images.tokopedia.net/img/cache/240/zssuBf/2023/7/18/698df21c-4678-43d4-a348-f648c102e971.png.webp?ect=4g"),
+                contentDescription = "",
+                modifier = modifier
+                    .height(275.dp)
+                    .width(140.dp)
+                    .graphicsLayer {
+                        alpha =
+                            if (lazyListState.firstVisibleItemScrollOffset < 500 && lazyListState.firstVisibleItemIndex == 0) 120f / lazyListState.firstVisibleItemScrollOffset else 0.5f
+                        translationX =
+                            if (lazyListState.firstVisibleItemScrollOffset < 100 && lazyListState.firstVisibleItemIndex == 0) 0f - lazyListState.firstVisibleItemScrollOffset else -100f
+                    },
+                contentScale = ContentScale.FillWidth,
+            )
+            LazyRow(
+                contentPadding = PaddingValues(start = 16.dp, end = 16.dp), modifier = modifier,
+                state = lazyListState,
+            ) {
+                item {
+                    Box(
+                        modifier = modifier
+                            .height(275.dp)
+                            .width(140.dp)
+                    )
+                }
+                items(items, key = { it.image }) { data ->
+                    CardItemDiscount(
+                        paddingEnd = 10.dp,
+                        imageUrl = data.image,
+                        title = data.title,
+                        subTitle = data.subTitle,
+                        paddingTop = 12.dp
+                    )
+                }
+            }
+            Divider(color = Color.LightGray.copy(alpha = 0.3f), modifier = modifier.height(10.dp))
+        }
+    }
+}

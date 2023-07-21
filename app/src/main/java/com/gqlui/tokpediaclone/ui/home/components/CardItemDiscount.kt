@@ -1,4 +1,4 @@
-package com.gqlui.tokpediaclone.ui.home
+package com.gqlui.tokpediaclone.ui.home.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -37,8 +37,8 @@ fun CardItemDiscount(
     Card(
         modifier = modifier
             .padding(end = paddingEnd, top = paddingTop)
-            .width(150.dp)
-            .height(250.dp),
+            .width(140.dp)
+            .height(240.dp),
         shape = RoundedCornerShape(8.dp),
         elevation = CardDefaults.cardElevation(
             defaultElevation = 4.dp
@@ -66,9 +66,16 @@ fun CardItemDiscount(
                     .padding(start = 10.dp, top = 8.dp, end = 12.dp)
                     .fillMaxWidth(),
             ) {
-                Text(text = subTitle, color = Color.Gray, fontSize = 12.sp)
-                Spacer(modifier = modifier.height(8.dp))
-                Text(text = title, fontWeight = FontWeight.Bold, fontSize = 14.sp)
+                if (subTitle.isNotEmpty()) {
+                    Text(text = subTitle, color = Color.Gray, fontSize = 12.sp)
+                    Spacer(modifier = modifier.height(8.dp))
+                }
+                if (title.isNotEmpty()) Text(
+                    text = title,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 14.sp
+                )
+
             }
         }
     }
