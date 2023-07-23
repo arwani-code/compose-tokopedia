@@ -40,6 +40,7 @@ import androidx.compose.ui.unit.sp
 import coil.compose.rememberAsyncImagePainter
 import com.gqlui.tokpediaclone.base.rememberClockVector
 import com.gqlui.tokpediaclone.data.model.RowHomeIc
+import com.gqlui.tokpediaclone.ui.components.MaxDivider
 import com.gqlui.tokpediaclone.ui.theme.PrimaryColor
 import kotlinx.coroutines.delay
 
@@ -59,7 +60,7 @@ fun BoxLazyRow(
         }
         timeSecond--
     })
-    Column(modifier = modifier.padding(vertical = 16.dp)) {
+    Column(modifier = modifier.padding(vertical = 14.dp)) {
         Text(
             text = "Kejar Diskon Spesial",
             fontWeight = FontWeight.Bold,
@@ -80,7 +81,6 @@ fun BoxLazyRow(
                     modifier = modifier
                         .padding(end = 10.dp)
                         .clip(CircleShape)
-//                    .width(100.dp)
                         .height(20.dp)
                         .background(color = Color(0xFFE02954)),
                     contentAlignment = Alignment.Center
@@ -153,14 +153,13 @@ fun BoxLazyRow(
                 items(items, key = { it.image }) { data ->
                     CardItemDiscount(
                         paddingEnd = 10.dp,
-                        imageUrl = data.image,
-                        title = data.title,
-                        subTitle = data.subTitle,
-                        paddingTop = 12.dp
+                        paddingTop = 12.dp,
+                        data = data
                     )
                 }
             }
-            Divider(color = Color.LightGray.copy(alpha = 0.3f), modifier = modifier.height(10.dp))
         }
+        Spacer(modifier = modifier.height(8.dp))
+        MaxDivider()
     }
 }

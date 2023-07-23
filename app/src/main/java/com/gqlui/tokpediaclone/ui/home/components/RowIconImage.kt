@@ -6,6 +6,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.dp
 import com.gqlui.tokpediaclone.data.model.RowHomeIc
+import com.gqlui.tokpediaclone.ui.components.MaxDivider
 
 @Composable
 fun RowIconImage(
@@ -23,4 +24,5 @@ fun RowIconImage(
             RowIconItem(image = it.image, title = it.title)
         }
     }
+    MaxDivider()
 }

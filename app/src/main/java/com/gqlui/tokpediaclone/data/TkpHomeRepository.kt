@@ -11,4 +11,5 @@ class TkpHomeRepository @Inject constructor(
     val imagesPager: List<String> = tkpLocalDataSource.imagePager
     val continueCheck: List<RowHomeIc> = tkpLocalDataSource.continueCheck
     val discountSpecial: List<RowHomeIc> = tkpLocalDataSource.discountSpecial
+    val needsSchool: List<RowHomeIc> = tkpLocalDataSource.needsSchool
 }

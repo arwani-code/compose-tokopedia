@@ -27,6 +27,7 @@ import com.gqlui.tokpediaclone.ui.components.MaxDivider
 import com.gqlui.tokpediaclone.ui.components.TkpTopAppBar
 import com.gqlui.tokpediaclone.ui.home.components.BoxLazyRow
 import com.gqlui.tokpediaclone.ui.home.components.ContinueCheck
+import com.gqlui.tokpediaclone.ui.home.components.GridRowSchool
 import com.gqlui.tokpediaclone.ui.home.components.RowIconImage
 import com.gqlui.tokpediaclone.ui.home.components.TopRowBar
 import com.gqlui.tokpediaclone.ui.theme.PrimaryColor
@@ -43,6 +44,7 @@ fun HomeTkp(
     val rowIcs by viewModel.rowIcsState.collectAsStateWithLifecycle()
     val continueCheckState by viewModel.continueCheckState.collectAsStateWithLifecycle()
     val discountSpecial by viewModel.discountSpecial.collectAsStateWithLifecycle()
+    val needsSchool by viewModel.needsSchool.collectAsStateWithLifecycle()
 
     DisposableEffect(key1 = systemUiController, effect = {
         systemUiController.setStatusBarColor(PrimaryColor)
@@ -65,7 +67,8 @@ fun HomeTkp(
                 rowIcs = rowIcs,
                 imageHorizontal = viewModel.imagesPager,
                 continueCheckState = continueCheckState,
-                discountSpecial = discountSpecial
+                discountSpecial = discountSpecial,
+                needsSchool = needsSchool
             )
         }
     }
@@ -80,7 +83,8 @@ fun HomeContent(
     imageHorizontal: List<String>,
     isLoading: Boolean = false,
     continueCheckState: List<RowHomeIc>,
-    discountSpecial: List<RowHomeIc>
+    discountSpecial: List<RowHomeIc>,
+    needsSchool: List<RowHomeIc>,
 ) {
     Column(
         modifier = modifier
@@ -89,9 +93,9 @@ fun HomeContent(
             .background(Color.White)
     ) {
         RowIconImage(rowIcs = rowIcs, items = imageHorizontal)
-        MaxDivider()
         ContinueCheck(continueCheckState = continueCheckState)
         BoxLazyRow(items = discountSpecial)
+        GridRowSchool(needsSchool = needsSchool)
     }
 }
 

@@ -27,7 +27,7 @@ fun ContinueCheck(
         contentPadding = PaddingValues(horizontal = 16.dp)
     ) {
         items(continueCheckState, key = { it.image }) {
-            CardItemDiscount(imageUrl = it.image, title = it.title, subTitle = it.subTitle)
+            CardItemDiscount(data = it)
         }
     }
 }

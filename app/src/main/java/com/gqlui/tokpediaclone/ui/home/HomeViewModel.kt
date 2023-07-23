@@ -28,9 +28,14 @@ class HomeViewModel @Inject constructor(
         MutableStateFlow(emptyList())
     val discountSpecial: StateFlow<List<RowHomeIc>> get() = _discountSpecialState
 
+    private val _needsSchoolState: MutableStateFlow<List<RowHomeIc>> =
+        MutableStateFlow(emptyList())
+    val needsSchool: StateFlow<List<RowHomeIc>> get() = _needsSchoolState
+
     init {
         _rowIcsState.value = tkpRepository.rowIcs
         _continueCheckState.value = tkpRepository.continueCheck
         _discountSpecialState.value = tkpRepository.discountSpecial
+        _needsSchoolState.value = tkpRepository.needsSchool
     }
 }

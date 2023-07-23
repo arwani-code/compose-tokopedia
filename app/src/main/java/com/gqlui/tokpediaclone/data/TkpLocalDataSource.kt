@@ -153,4 +153,10 @@ class TkpLocalDataSource @Inject constructor() {
             progressIndicator = "80"
         ),
     )
+    val needsSchool = listOf(
+        RowHomeIc(image = "https://images.tokopedia.net/img/cache/400/RInQea/2023/7/20/ad1625b7-542c-4dd0-a469-adc7a75f2e2f.jpg.webp?ect=4g"),
+        RowHomeIc(image = "https://images.tokopedia.net/img/cache/400/RInQea/2023/7/20/fe3a8fff-f240-4b8e-ac48-f94e9913fb1a.jpg.webp?ect=4g"),
+        RowHomeIc(image = "https://images.tokopedia.net/img/cache/400/RInQea/2023/7/20/5ad50b36-1b22-4b94-a1c0-eef2d9efcf36.jpg.webp?ect=4g"),
+        RowHomeIc(image = "https://images.tokopedia.net/img/cache/400/RInQea/2023/7/20/3ea68075-3576-4560-abd2-e74e1ddc00ce.jpg.webp?ect=4g")
+    )
 }
