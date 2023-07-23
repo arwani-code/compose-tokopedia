@@ -1,6 +1,7 @@
 package com.gqlui.tokpediaclone.ui.components
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -43,7 +44,8 @@ import com.gqlui.tokpediaclone.ui.theme.PrimaryColor
 fun TkpTopAppBar(
     modifier: Modifier = Modifier,
     tinColor: Color = Color.White,
-    bgColor: Color = PrimaryColor
+    bgColor: Color = PrimaryColor,
+    isScrollInProgress: Boolean = false
 ) {
 
     var value by remember {
@@ -74,8 +76,12 @@ fun TkpTopAppBar(
                         Row(
                             Modifier
                                 .background(Color.White, RoundedCornerShape(percent = 20))
-//                                .padding(8.dp)
-                                .fillMaxSize(),
+                                .fillMaxSize()
+                                .border(
+                                    width = 1.dp,
+                                    color = Color.LightGray,
+                                    shape = RoundedCornerShape(percent = 20)
+                                ),
                             verticalAlignment = Alignment.CenterVertically,
                             horizontalArrangement = Arrangement.Center
                         ) {
@@ -104,7 +110,7 @@ fun TkpTopAppBar(
                     imageVector = rememberVectorMsg(),
                     contentDescription = "",
                     modifier = modifier.size(25.dp),
-                    tint = Color.White
+                    tint = tinColor
                 )
                 Box(
                     modifier = modifier
@@ -186,9 +192,14 @@ fun TkpTopAppBar(
                 )
             }
         }
+        if (isScrollInProgress) {
+            Divider(
+                thickness = 1.dp,
+                color = Color.Black.copy(alpha = 0.1f)
+            )
+        }
     }
 }
-
 
 
 @Composable
