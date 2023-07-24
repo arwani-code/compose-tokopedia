@@ -12,4 +12,5 @@ class TkpHomeRepository @Inject constructor(
     val continueCheck: List<RowHomeIc> = tkpLocalDataSource.continueCheck
     val discountSpecial: List<RowHomeIc> = tkpLocalDataSource.discountSpecial
     val needsSchool: List<RowHomeIc> = tkpLocalDataSource.needsSchool
+    val vitaminAndSupplements: List<RowHomeIc> = tkpLocalDataSource.vitaminAndSupplements
 }

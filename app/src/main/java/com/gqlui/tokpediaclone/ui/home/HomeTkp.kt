@@ -2,6 +2,7 @@ package com.gqlui.tokpediaclone.ui.home
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.foundation.background
+import androidx.compose.foundation.gestures.animateScrollBy
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -13,6 +14,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -31,6 +33,7 @@ import com.gqlui.tokpediaclone.ui.home.components.ContinueCheck
 import com.gqlui.tokpediaclone.ui.home.components.GridRowSchool
 import com.gqlui.tokpediaclone.ui.home.components.RowIconImage
 import com.gqlui.tokpediaclone.ui.home.components.TopRowBar
+import com.gqlui.tokpediaclone.ui.home.components.VitaminAndSupplement
 import com.gqlui.tokpediaclone.ui.theme.PrimaryColor
 import kotlinx.coroutines.FlowPreview
 
@@ -47,18 +50,11 @@ fun HomeTkp(
 
     val systemUiController = rememberSystemUiController()
     val scrollState = rememberScrollState()
-    val topColorList = listOf(
-        Color(0xFF16AE67),
-        Color(0xFF89ecb9),
-        Color(0xFF89ecb9),
-        Color(0xFFccfcdc),
-        Color(0xFFecfcf3),
-        Color(0xFFFFFFFF)
-    )
-
-    var isScrollInProgress by remember {
-        mutableStateOf(false)
-    }
+    val isScrollInProgress by remember {
+        mutableStateOf(derivedStateOf {
+            scrollState.value > 100
+        })
+    }.value
 
     val topBarColor by animateColorAsState(
         targetValue = if (isScrollInProgress) {
@@ -67,24 +63,23 @@ fun HomeTkp(
             PrimaryColor
         }
     )
+
     val rowIcs by viewModel.rowIcsState.collectAsStateWithLifecycle()
     val continueCheckState by viewModel.continueCheckState.collectAsStateWithLifecycle()
     val discountSpecial by viewModel.discountSpecial.collectAsStateWithLifecycle()
     val needsSchool by viewModel.needsSchool.collectAsStateWithLifecycle()
+    val vitaminAndSupplements by viewModel.vitaminAndSupplements.collectAsStateWithLifecycle()
 
     DisposableEffect(key1 = Unit, effect = {
-        systemUiController.setStatusBarColor(PrimaryColor)
         onDispose {
             systemUiController.setStatusBarColor(Color.White)
         }
     })
 
-    LaunchedEffect(key1 = scrollState.value, block = {
-        if (scrollState.value > 100) {
-            isScrollInProgress = true
+    LaunchedEffect(key1 = isScrollInProgress, block = {
+        if (isScrollInProgress) {
             systemUiController.setStatusBarColor(Color.White)
         } else {
-            isScrollInProgress = false
             systemUiController.setStatusBarColor(PrimaryColor)
         }
     })
@@ -110,7 +105,8 @@ fun HomeTkp(
                 imageHorizontal = viewModel.imagesPager,
                 continueCheckState = continueCheckState,
                 discountSpecial = discountSpecial,
-                needsSchool = needsSchool
+                needsSchool = needsSchool,
+                vitaminAndSupplement = vitaminAndSupplements
             )
         }
     }
@@ -127,6 +123,7 @@ fun HomeContent(
     continueCheckState: List<RowHomeIc>,
     discountSpecial: List<RowHomeIc>,
     needsSchool: List<RowHomeIc>,
+    vitaminAndSupplement: List<RowHomeIc>
 ) {
     Column(
         modifier = modifier
@@ -138,6 +135,7 @@ fun HomeContent(
         ContinueCheck(continueCheckState = continueCheckState)
         BoxLazyRow(items = discountSpecial)
         GridRowSchool(needsSchool = needsSchool)
+        VitaminAndSupplement(vitaminAndSupplements = vitaminAndSupplement)
     }
 }
 

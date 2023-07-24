@@ -159,4 +159,24 @@ class TkpLocalDataSource @Inject constructor() {
         RowHomeIc(image = "https://images.tokopedia.net/img/cache/400/RInQea/2023/7/20/5ad50b36-1b22-4b94-a1c0-eef2d9efcf36.jpg.webp?ect=4g"),
         RowHomeIc(image = "https://images.tokopedia.net/img/cache/400/RInQea/2023/7/20/3ea68075-3576-4560-abd2-e74e1ddc00ce.jpg.webp?ect=4g")
     )
+    val vitaminAndSupplements = listOf(
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/400-square/phZFtb/2023/7/21/a213dcf9-c1a0-4888-8c0b-03bcfe4048d2.jpg"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/400-square/phZFtb/2023/7/21/e559eb07-9d00-4731-83d0-9aab9b852a6c.jpg"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/400-square/phZFtb/2023/7/21/cfd1baa9-c1fe-46fa-b11c-31dabcba1510.jpg"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/400-square/phZFtb/2023/7/21/00040629-e996-462f-abef-12d0d43f1283.jpg"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/400-square/phZFtb/2023/7/21/ab8bf1e8-a06f-406a-9010-b98b6e568e5a.jpg"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/400-square/phZFtb/2023/7/21/99e25bd2-5d1d-4e1e-92cf-2c44c57492dc.jpg"
+        ),
+    )
 }
