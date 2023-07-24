@@ -18,26 +18,30 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.util.lerp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.gqlui.tokpediaclone.ui.theme.PrimaryColor
+import com.gqlui.tokpediaclone.ui.utils.wormTransition
 import kotlin.math.absoluteValue
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun ImageHorizontalPager(
     modifier: Modifier = Modifier,
-    items: List<String>
+    items: List<String>,
+    spacing: Dp = 10.dp,
 ) {
-    Column(modifier = Modifier) {
+    Column(modifier = modifier) {
         val pageCount = Int.MAX_VALUE / 2
         val pagerState = rememberPagerState(pageCount = { pageCount })
         val context = LocalContext.current
@@ -72,22 +76,26 @@ fun ImageHorizontalPager(
             }
         }
 
-        Row(
-            Modifier
-                .height(50.dp)
-                .fillMaxWidth(),
-            horizontalArrangement = Arrangement.Center
+        Box(
+            modifier = modifier
+                .height(40.dp),
+            contentAlignment = Alignment.Center
         ) {
-            repeat(items.size) { iteration ->
-                val color =
-                    if (pagerState.currentPage % items.size == iteration) PrimaryColor else Color.LightGray
-                Box(
-                    modifier = Modifier
-                        .padding(4.dp)
-                        .clip(CircleShape)
-                        .background(color)
-                        .size(10.dp),
-                )
+            Row(
+                modifier.fillMaxSize(),
+                horizontalArrangement = Arrangement.Center
+            ) {
+                repeat(items.size) { iteration ->
+                    val color =
+                        if (pagerState.currentPage % items.size == iteration) PrimaryColor else Color.LightGray
+                    Box(
+                        modifier = Modifier
+                            .padding(vertical = 6.dp, horizontal = 2.dp)
+                            .clip(CircleShape)
+                            .background(color)
+                            .size(6.dp),
+                    )
+                }
             }
         }
     }

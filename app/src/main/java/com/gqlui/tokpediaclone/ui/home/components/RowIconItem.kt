@@ -13,6 +13,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.rememberAsyncImagePainter
@@ -25,6 +26,7 @@ fun RowIconItem(
 ) {
     Box(
         modifier = modifier
+            .padding(bottom = 10.dp)
             .width(70.dp),
     ) {
         Column(
@@ -41,8 +43,10 @@ fun RowIconItem(
             Text(
                 text = title, fontSize = 12.sp, style = TextStyle(
                     textAlign = TextAlign.Center,
-                    letterSpacing = 0.sp
-                )
+                    letterSpacing = 0.sp,
+                ),
+                maxLines = 2,
+                overflow = TextOverflow.Ellipsis
             )
         }
     }

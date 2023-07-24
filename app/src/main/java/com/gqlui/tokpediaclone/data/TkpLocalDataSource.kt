@@ -51,6 +51,39 @@ class TkpLocalDataSource @Inject constructor() {
             title = "Perawatan Tubuh",
             image = "https://images.tokopedia.net/img/cache/64-square/iEWsxH/2023/4/27/4989439f-c1f2-4a71-ba54-555c6f19b040.png",
         ),
+
+        RowHomeIc(
+            title = "Official Store",
+            image = "https://images.tokopedia.net/img/cache/64-square/iEWsxH/2023/4/15/d6e0bbd2-1b41-40d1-9d25-df27e46eb42a.png",
+        ),
+        RowHomeIc(
+            title = "Live Shopping",
+            image = "https://images.tokopedia.net/img/cache/64-square/iEWsxH/2022/8/8/ef55450a-0003-4d4e-b621-5cb0b650a772.png",
+        ),
+        RowHomeIc(
+            title = "Tokopedia Seru",
+            image = "https://images.tokopedia.net/img/cache/64-square/iEWsxH/2022/6/6/6078a763-4b0f-4bed-b9cd-d3a282cc7699.png",
+        ),
+        RowHomeIc(
+            title = "Gopay Later Cicil",
+            image = "https://images.tokopedia.net/img/cache/64-square/iEWsxH/2023/4/15/0e844dcc-80e4-45f2-8969-66ee1b19a73b.png",
+        ),
+        RowHomeIc(
+            title = "Cicilan Tanpa Bayar",
+            image = "https://images.tokopedia.net/img/cache/64-square/iEWsxH/2023/4/12/ff4e96bf-bc20-4c22-9cfc-69885383f314.png",
+        ),
+        RowHomeIc(
+            title = "Pajak PBB",
+            image = "https://images.tokopedia.net/img/cache/64-square/iEWsxH/2022/7/25/d23cf22c-ad54-4ecf-81b5-1f5befff790c.png",
+        ),
+        RowHomeIc(
+            title = "Bayar di Tempat",
+            image = "https://images.tokopedia.net/img/cache/64-square/iEWsxH/2021/4/19/86e060e5-b9d9-4878-86df-20fba2db1542.png",
+        ),
+        RowHomeIc(
+            title = "Bangga Lokal",
+            image = "https://images.tokopedia.net/img/cache/64-square/iEWsxH/2021/7/27/90224ebb-fd33-4bb9-be8c-8be9d8c10ba6.png",
+        ),
     )
     val imagePager = listOf(
         "https://images.tokopedia.net/img/cache/1200/NXCtjv/2023/6/30/74501321-54c7-4375-a98d-224742be0e5e.jpg.webp",
@@ -177,6 +210,44 @@ class TkpLocalDataSource @Inject constructor() {
         ),
         RowHomeIc(
             image = "https://images.tokopedia.net/img/cache/400-square/phZFtb/2023/7/21/99e25bd2-5d1d-4e1e-92cf-2c44c57492dc.jpg"
+        ),
+    )
+    val promoToday = listOf(
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/SuMXtx/2023/7/24/db956ee1-50ae-4c19-bf9e-623c80b88af1.jpg"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/SuMXtx/2023/7/23/e359a6c2-7b3e-442a-b283-3e3c04f2414f.jpg"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/SuMXtx/2023/7/24/37338179-8463-44b4-9792-15ae83cbcc83.jpg"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/SuMXtx/2023/7/24/5e7f51d1-176b-434d-bac0-a7ff56ba177f.jpg"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/SuMXtx/2023/7/10/3e9a7a09-50a6-41dc-9b2a-46d0e5d98e59.jpg"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/SuMXtx/2023/7/1/b5c6eff0-8d5a-4c3e-84bf-2e462ab5d948.jpg"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/SuMXtx/2023/7/24/1aa2f257-33a4-4bad-ab28-5c5f62e2c915.jpg"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/SuMXtx/2023/7/18/ea8f8e0b-e460-4d2e-9bfc-40074e453a77.jpg"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/SuMXtx/2023/7/23/d137cd52-46d3-49ac-9fdd-186672b352ff.jpg"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/SuMXtx/2023/6/30/e0f224e8-87e4-47f6-bdb7-df358d5529fd.jpg"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/SuMXtx/2023/7/24/b7df7c67-2905-48d5-8f2a-db9d178b1ab5.jpg"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/SuMXtx/2023/7/24/b37303b9-584c-4bcc-934b-5853e6e1a94b.jpg"
         ),
     )
 }

@@ -36,11 +36,16 @@ class HomeViewModel @Inject constructor(
         MutableStateFlow(emptyList())
     val vitaminAndSupplements: StateFlow<List<RowHomeIc>> get() = _vitaminAndSupplementsState
 
+    private val _promoTodayState: MutableStateFlow<List<RowHomeIc>> =
+        MutableStateFlow(emptyList())
+    val promoToday: StateFlow<List<RowHomeIc>> get() = _promoTodayState
+
     init {
         _rowIcsState.value = tkpRepository.rowIcs
         _continueCheckState.value = tkpRepository.continueCheck
         _discountSpecialState.value = tkpRepository.discountSpecial
         _needsSchoolState.value = tkpRepository.needsSchool
         _vitaminAndSupplementsState.value = tkpRepository.vitaminAndSupplements
+        _promoTodayState.value = tkpRepository.promoToday
     }
 }

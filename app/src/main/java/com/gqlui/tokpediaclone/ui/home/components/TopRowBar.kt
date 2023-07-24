@@ -71,10 +71,12 @@ fun TopRowBar(
                         )
                     )
                 }, color = Color.White, fontSize = 12.sp)
+                Spacer(modifier = modifier.width(4.dp))
                 Icon(
                     imageVector = Icons.Default.KeyboardArrowDown,
                     contentDescription = "",
-                    tint = Color.White
+                    tint = Color.White,
+                    modifier = modifier.size(16.dp)
                 )
             }
         }

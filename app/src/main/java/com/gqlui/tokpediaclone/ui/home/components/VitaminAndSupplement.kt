@@ -45,7 +45,11 @@ fun VitaminAndSupplement(
                 Text(text = "Lihat Semua", color = PrimaryColor, fontWeight = FontWeight.Bold)
             }
         }
-        LazyVerticalGrid(columns = GridCells.Fixed(3), modifier = modifier.height(230.dp)) {
+        LazyVerticalGrid(
+            columns = GridCells.Fixed(3),
+            modifier = modifier.height(230.dp),
+            userScrollEnabled = false
+        ) {
             items(vitaminAndSupplements) {
                 AsyncImage(
                     model = ImageRequest.Builder(context).data(it.image).build(),
