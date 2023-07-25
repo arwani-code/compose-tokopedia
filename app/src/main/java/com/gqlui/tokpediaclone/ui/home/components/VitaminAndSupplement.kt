@@ -19,6 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
@@ -33,32 +34,43 @@ fun VitaminAndSupplement(
 ) {
     val context = LocalContext.current
     Column {
-        Row(
-            modifier = modifier
-                .padding(horizontal = 16.dp)
-                .fillMaxWidth(),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.SpaceBetween
-        ) {
-            Text(text = "Vitamin dan Suplemen", fontWeight = FontWeight.Bold)
-            TextButton(onClick = { /*TODO*/ }) {
-                Text(text = "Lihat Semua", color = PrimaryColor, fontWeight = FontWeight.Bold)
-            }
-        }
+        TitleSection(title = "Vitamin dan Suplemen", paddingVertical = 0.dp)
         LazyVerticalGrid(
             columns = GridCells.Fixed(3),
-            modifier = modifier.height(230.dp),
+            modifier = modifier.height(270.dp),
             userScrollEnabled = false
         ) {
             items(vitaminAndSupplements) {
                 AsyncImage(
                     model = ImageRequest.Builder(context).data(it.image).build(),
                     contentDescription = "image",
-                    contentScale = ContentScale.FillBounds,
+                    contentScale = ContentScale.FillWidth,
                     modifier = modifier
                 )
             }
         }
         MaxDivider()
+    }
+}
+
+@Composable
+fun TitleSection(
+    modifier: Modifier = Modifier,
+    title: String,
+    canShowTextButton: Boolean = true,
+    paddingVertical: Dp = 10.dp
+) {
+    Row(
+        modifier = modifier
+            .padding(horizontal = 16.dp, vertical = paddingVertical)
+            .fillMaxWidth(),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.SpaceBetween
+    ) {
+        Text(text = title, fontWeight = FontWeight.Bold)
+        if (canShowTextButton)
+            TextButton(onClick = { /*TODO*/ }) {
+                Text(text = "Lihat Semua", color = PrimaryColor, fontWeight = FontWeight.Bold)
+            }
     }
 }

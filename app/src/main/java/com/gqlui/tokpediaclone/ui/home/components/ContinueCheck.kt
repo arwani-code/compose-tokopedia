@@ -22,18 +22,18 @@ fun ContinueCheck(
     continueCheckState: List<RowHomeIc>
 ) {
     val scrollState = rememberLazyListState()
-    Text(
-        text = "Lanjut cek ini, yuk",
-        fontWeight = FontWeight.Bold,
-        modifier = modifier.padding(vertical = 10.dp, horizontal = 16.dp),
-        fontSize = 16.sp
-    )
+    TitleSection(title = "Lanjut cek ini, yuk", canShowTextButton = false)
     LazyRow(
         contentPadding = PaddingValues(horizontal = 16.dp),
         state = scrollState,
     ) {
         items(continueCheckState, key = { it.image }) {
-            CardItemDiscount(data = it)
+            CardItemDiscount(
+                data = it,
+                cardWidth = 140.dp,
+                cardHeight = 240.dp,
+                sizeImage = 150.dp
+            )
         }
     }
 }

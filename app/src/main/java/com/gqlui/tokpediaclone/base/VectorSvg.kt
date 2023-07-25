@@ -13,6 +13,86 @@ import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 
 @Composable
+fun rememberVectorOfficialStore(): ImageVector {
+    return remember {
+        ImageVector.Builder(
+            name = "vector",
+            defaultWidth = 24.dp,
+            defaultHeight = 24.dp,
+            viewportWidth = 24f,
+            viewportHeight = 24f
+        ).apply {
+            path(
+                fill = SolidColor(Color(0xFF7F37D7)),
+                fillAlpha = 1.0f,
+                stroke = null,
+                strokeAlpha = 1.0f,
+                strokeLineWidth = 1.0f,
+                strokeLineCap = StrokeCap.Butt,
+                strokeLineJoin = StrokeJoin.Miter,
+                strokeLineMiter = 1.0f,
+                pathFillType = PathFillType.NonZero
+            ) {
+                moveTo(20.25f, 2f)
+                horizontalLineToRelative(-3.1f)
+                arcTo(7.43f, 7.43f, 0f, isMoreThanHalf = false, isPositiveArc = false, 12f, 4f)
+                arcTo(7.43f, 7.43f, 0f, isMoreThanHalf = false, isPositiveArc = false, 6.85f, 2f)
+                horizontalLineTo(3.75f)
+                arcTo(1.75f, 1.75f, 0f, isMoreThanHalf = false, isPositiveArc = false, 2f, 3.76f)
+                verticalLineTo(20.25f)
+                arcTo(1.76f, 1.76f, 0f, isMoreThanHalf = false, isPositiveArc = false, 3.75f, 22f)
+                horizontalLineToRelative(10.5f)
+                arcTo(7.76f, 7.76f, 0f, isMoreThanHalf = false, isPositiveArc = false, 22f, 14.25f)
+                verticalLineTo(3.76f)
+                arcTo(1.75f, 1.75f, 0f, isMoreThanHalf = false, isPositiveArc = false, 20.25f, 2f)
+                close()
+            }
+            path(
+                fill = SolidColor(Color(0xFFFFA617)),
+                fillAlpha = 1.0f,
+                stroke = null,
+                strokeAlpha = 1.0f,
+                strokeLineWidth = 1.0f,
+                strokeLineCap = StrokeCap.Butt,
+                strokeLineJoin = StrokeJoin.Miter,
+                strokeLineMiter = 1.0f,
+                pathFillType = PathFillType.NonZero
+            ) {
+                moveTo(11f, 16.35f)
+                arcTo(1.37f, 1.37f, 0f, isMoreThanHalf = false, isPositiveArc = true, 10f, 16f)
+                lineTo(7f, 13f)
+                arcTo(1.36f, 1.36f, 0f, isMoreThanHalf = true, isPositiveArc = true, 9f, 11f)
+                lineToRelative(2f, 2.05f)
+                lineTo(16f, 8f)
+                arcTo(1.36f, 1.36f, 0f, isMoreThanHalf = false, isPositiveArc = true, 18f, 10f)
+                lineToRelative(-6f, 6f)
+                arcTo(1.37f, 1.37f, 0f, isMoreThanHalf = false, isPositiveArc = true, 11f, 16.35f)
+                close()
+            }
+            path(
+                fill = null,
+                fillAlpha = 1.0f,
+                stroke = null,
+                strokeAlpha = 1.0f,
+                strokeLineWidth = 1.0f,
+                strokeLineCap = StrokeCap.Butt,
+                strokeLineJoin = StrokeJoin.Miter,
+                strokeLineMiter = 1.0f,
+                pathFillType = PathFillType.NonZero
+            ) {
+                moveTo(0f, 0f)
+                horizontalLineTo(24f)
+                verticalLineTo(24f)
+                horizontalLineTo(0f)
+                verticalLineTo(0f)
+                close()
+            }
+        }.build()
+    }
+}
+
+
+@Composable
 fun rememberClockVector(): ImageVector {
     return remember {
         ImageVector.Builder(

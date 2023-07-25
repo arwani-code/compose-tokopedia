@@ -30,12 +30,7 @@ fun GridRowSchool(
 ) {
     val context = LocalContext.current
     Column(modifier = modifier.fillMaxWidth()) {
-        Text(
-            text = "Ribuan Kebutuhan Sekolah",
-            Modifier.padding(vertical = 12.dp, horizontal = 16.dp),
-            fontSize = 16.sp,
-            fontWeight = FontWeight.Bold
-        )
+        TitleSection(title = "Ribuan Kebutuhan Sekolah", canShowTextButton = false)
         Box(
             modifier = modifier
                 .fillMaxWidth()
@@ -44,7 +39,7 @@ fun GridRowSchool(
             LazyHorizontalGrid(
                 rows = GridCells.Fixed(2),
                 modifier = modifier.fillMaxSize(),
-                userScrollEnabled = false
+                userScrollEnabled = false,
             ) {
                 itemsIndexed(needsSchool) { index, data ->
                     AsyncImage(

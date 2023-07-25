@@ -38,22 +38,11 @@ fun PromoToday(
 ) {
     val context = LocalContext.current
     Column(modifier = modifier.fillMaxSize()) {
-        Row(
-            modifier = modifier
-                .padding(horizontal = 16.dp)
-                .fillMaxWidth(),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.SpaceBetween
+        TitleSection(title = "Pilihan Promo Hari ini", paddingVertical = 0.dp)
+        LazyRow(
+            contentPadding = PaddingValues(horizontal = 10.dp),
+            modifier = modifier.fillMaxSize()
         ) {
-            Text(text = "Pilihan Promo Hari ini", fontWeight = FontWeight.Bold)
-            TextButton(onClick = { /*TODO*/ }) {
-                Text(
-                    text = "Lihat Semua", fontWeight = FontWeight.Bold, fontSize = 12.sp,
-                    color = PrimaryColor
-                )
-            }
-        }
-        LazyRow(contentPadding = PaddingValues(horizontal = 10.dp), modifier = modifier.fillMaxSize()) {
             items(data, key = { it.image }) {
                 Card(
                     shape = RoundedCornerShape(12.dp),

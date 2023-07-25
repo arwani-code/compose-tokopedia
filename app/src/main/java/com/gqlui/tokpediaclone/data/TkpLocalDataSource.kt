@@ -250,4 +250,143 @@ class TkpLocalDataSource @Inject constructor() {
             image = "https://images.tokopedia.net/img/SuMXtx/2023/7/24/b37303b9-584c-4bcc-934b-5853e6e1a94b.jpg"
         ),
     )
+    val promoReminders = listOf(
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/VqbcmM/2021/5/29/ad16e1c5-ef9a-4cfc-bbc5-8723c36a52d0.jpg",
+            subTitle = "Ebike Kit sepeda listrik dinamo bldc roda belakang 36v350w dan velg",
+            title = "Rp 2.100.000",
+            discount = "2%",
+            price = "Rp 2.150.000",
+            city = "Jakarta Utara",
+            ratingStar = "5.0 | Terjual 15",
+            arrived = "Tiba 12 - 29 Des"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/VqbcmM/2022/3/10/97e14a15-8d8c-484a-a2ab-f980298aa8d0.jpg.webp?ect=4g",
+            subTitle = "Apple iPad Air 5 2022 iPad Air M1 10.9\" 64GB / 256GB Wifi Cellular",
+            title = "Rp 7.987.000",
+            discount = "6%",
+            price = "Rp 8.499.000",
+            city = "Jakarta Pusat",
+            ratingStar = "5.0 | Terjual 1 rb+",
+            arrived = "Tiba 12 - 29 Des"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/VqbcmM/2023/2/16/0dc05578-42e7-4dea-bee9-8c35d2db4b43.jpg",
+            subTitle = "Nestle LACTOGROW 3 Madu Susu Anak 1-3 Tahun Box 350g",
+            title = "Rp 54.040",
+            discount = "27%",
+            price = "Rp 73.700",
+            city = "Jakarta Pusat",
+            ratingStar = "5.0 | Terjual 4 rb+",
+            textAltImage = "Harga spesial",
+            arrived = "Tiba 12 - 29 Des"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/VqbcmM/2022/4/16/5d5d6809-3b29-4b60-b2ef-77ab5aed02e0.jpg",
+            subTitle = "iPad Air 5 (M1) / 10,9\" 2022 - COPPER TEMPERED GLASS FULL CLEAR",
+            title = "Rp 109.900",
+            discount = "63%",
+            price = "Rp 300.000",
+            city = "Jakarta Barat",
+            ratingStar = "5.0 | Terjual 5 rb+",
+            textAltImage = "WIB",
+            arrived = "Tiba 12 - 29 Des"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/hDjmkQ/2023/6/20/ea0d5503-0b8d-4730-8fa0-5f7299f76f31.jpg",
+            subTitle = "MILS Paperlike Matte Anti Gores iPad 8 10.2 Pro 11 Air 3 10.5 4 10.9",
+            title = "Rp 125.900",
+            discount = "14%",
+            price = "Rp 145.000",
+            city = "Jakarta Utara",
+            ratingStar = "4.9 | Terjual 2 rb+",
+            textAltImage = "Super Gadget Day",
+            arrived = "Tiba 12 - 29 Des"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/VqbcmM/2022/9/26/670077ab-2fa0-4899-afef-791a44838c37.jpg",
+            subTitle = "Macbook Pro 2012 MD101 13inch Core i5 128/256/512GB SSD",
+            title = "Rp 3.300.000",
+            discount = "31%",
+            price = "Rp 4.750.000",
+            city = "Jakarta Selatan",
+            ratingStar = "4.9 | Terjual 2+",
+            arrived = "Tiba 12 - 29 Des"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/VqbcmM/2022/9/19/a473459e-41ad-4fb5-8019-e5877f070ec4.jpg.webp?ect=4g",
+            subTitle = "Apple iPad Air 5 2022 M1 64GB 256GB IBOX CELL Cellular WIFI Only",
+            title = "Rp 8.015.000",
+            discount = "10%",
+            price = "Rp 8.899.000",
+            city = "Jakarta Pusat",
+            ratingStar = "4.9 | Terjual 1 rb+",
+            textAltImage = "Super Gadget Day",
+            arrived = "Tiba 12 - 29 Des"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/VqbcmM/2022/6/3/b0c7d5ea-c900-4924-beff-7853de5824bc.jpg.webp?ect=4g",
+            subTitle = "UGREEN Sleeve Case iPad Pro Macbook Air Tas Laptop Bag 13'' 13inch 16\"",
+            title = "Rp 120.000",
+            discount = "8%",
+            price = "Rp 130.000",
+            city = "Jakarta Barat",
+            ratingStar = "5.0 | Terjual 100+",
+            arrived = "Tiba 12 - 29 Des"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/VqbcmM/2023/4/14/7e77d5aa-7e09-44de-965c-c9282f23ca1a.jpg",
+            subTitle = "Apple Macbook Air M1 M2 8GB 16GB 256GB 512GB 13\" IBOX",
+            title = "Rp 12.075.000",
+            discount = "64%",
+            price = "Rp 33.999.000",
+            city = "Jakarta Pusat",
+            ratingStar = "5.0 | Terjual 7",
+            textAltImage = "Back to School",
+            arrived = "Tiba 12 - 29 Des"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/VqbcmM/2023/6/20/e140bfd4-7b17-4048-b0f3-672bd2ce21ac.png",
+            subTitle = "NEW Apple Macbook Air 2022 M2 Chip 13\" 16GB 256GB 512GB 1TB SSD IT",
+            title = "Rp 16.648.999",
+            discount = "45%",
+            price = "Rp 30.000.000",
+            city = "Jakarta Pusat",
+            ratingStar = "5.0 | Terjual 80+",
+            textAltImage = "Mega Electrodeals",
+            arrived = "Tiba 12 - 29 Des"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/VqbcmM/2022/8/21/84aef12a-661c-493b-8a3a-23766005daa6.png.webp?ect=4g",
+            subTitle = "Leather Case iPad Air ESR Rebound Pencil",
+            title = "Rp 238.850",
+            discount = "71%",
+            price = "Rp 825.000",
+            city = "Surabaya",
+            ratingStar = "5.0 | Terjual 100+",
+            textAltImage = "Super Gadget Day",
+            arrived = "Tiba 12 - 29 Des"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/VqbcmM/2022/9/16/b08f8d1d-9daf-4566-9751-f4945f9714dc.png",
+            subTitle = "Apple Macbook Air M2 Chip 2022 8GB/512GB IBOX",
+            title = "Rp 23.349.000",
+            discount = "14%",
+            price = "Rp 27.000.000",
+            city = "Surabaya",
+            ratingStar = "5.0 | Terjual 1",
+            arrived = "Tiba 12 - 29 Des"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/VqbcmM/2023/7/3/122a9899-0f41-4f69-b78a-26fe071627b1.jpg",
+            subTitle = "Screen Protector iPad Air 4/ 5 10.9 Pro 11 Spigen Paperlike FC Film",
+            title = "Rp 242.002",
+            discount = "18%",
+            price = "Rp 295.000",
+            city = "Jakarta Barat",
+            ratingStar = "5.0 | Terjual 750+",
+            arrived = "Tiba 12 - 29 Des"
+        ),
+    )
 }

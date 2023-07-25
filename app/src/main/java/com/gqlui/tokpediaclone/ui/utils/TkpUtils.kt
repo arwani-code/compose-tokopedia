@@ -201,3 +201,7 @@ private fun DrawScope.drawLinearIndicator(
         }
     }
 }
+
+fun String.imgUrl(): String {
+    return "https://images.tokopedia.net/img/cache/$this"
+}

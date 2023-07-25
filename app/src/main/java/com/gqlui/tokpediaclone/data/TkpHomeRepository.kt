@@ -1,5 +1,6 @@
 package com.gqlui.tokpediaclone.data
 
+import androidx.compose.ui.graphics.Color
 import com.gqlui.tokpediaclone.data.model.RowHomeIc
 import javax.inject.Inject
 
@@ -7,6 +8,7 @@ import javax.inject.Inject
 class TkpHomeRepository @Inject constructor(
     tkpLocalDataSource: TkpLocalDataSource
 ) {
+
     val rowIcs: List<RowHomeIc> = tkpLocalDataSource.rowIcs
     val imagesPager: List<String> = tkpLocalDataSource.imagePager
     val continueCheck: List<RowHomeIc> = tkpLocalDataSource.continueCheck
@@ -14,4 +16,6 @@ class TkpHomeRepository @Inject constructor(
     val needsSchool: List<RowHomeIc> = tkpLocalDataSource.needsSchool
     val vitaminAndSupplements: List<RowHomeIc> = tkpLocalDataSource.vitaminAndSupplements
     val promoToday: List<RowHomeIc> = tkpLocalDataSource.promoToday
+    val promoReminders: List<RowHomeIc> = tkpLocalDataSource.promoReminders
+
 }

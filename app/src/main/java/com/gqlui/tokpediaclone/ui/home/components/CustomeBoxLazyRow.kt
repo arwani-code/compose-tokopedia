@@ -8,10 +8,12 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
@@ -33,19 +35,23 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.rememberAsyncImagePainter
 import com.gqlui.tokpediaclone.base.rememberClockVector
 import com.gqlui.tokpediaclone.data.model.RowHomeIc
 import com.gqlui.tokpediaclone.ui.components.MaxDivider
+import com.gqlui.tokpediaclone.ui.home.ImageColor
 import com.gqlui.tokpediaclone.ui.theme.PrimaryColor
+import com.gqlui.tokpediaclone.ui.utils.imgUrl
 import kotlinx.coroutines.delay
 
 @Composable
 fun BoxLazyRow(
     modifier: Modifier = Modifier,
-    items: List<RowHomeIc>
+    items: List<RowHomeIc>,
+    imageBgUrl: ImageColor
 ) {
     val lazyListState = rememberLazyListState()
     var timeSecond by remember {
@@ -112,52 +118,87 @@ fun BoxLazyRow(
             }
 
             TextButton(onClick = { /*TODO*/ }) {
-                Text(text = "Lihat Semua", fontWeight = FontWeight.Bold, color = PrimaryColor, fontSize = 13.sp)
+                Text(
+                    text = "Lihat Semua",
+                    fontWeight = FontWeight.Bold,
+                    color = PrimaryColor,
+                    fontSize = 13.sp
+                )
             }
         }
-        Box(
-            modifier = modifier
-                .height(270.dp)
-                .fillMaxWidth()
-                .background(
-                    Color(0xFF73E53F)
-                ),
-        ) {
-            Image(
-                painter = rememberAsyncImagePainter(model = "https://images.tokopedia.net/img/cache/240/zssuBf/2023/7/18/698df21c-4678-43d4-a348-f648c102e971.png.webp?ect=4g"),
-                contentDescription = "",
-                modifier = modifier
-                    .height(275.dp)
-                    .width(140.dp)
-                    .graphicsLayer {
-                        alpha =
-                            if (lazyListState.firstVisibleItemScrollOffset < 500 && lazyListState.firstVisibleItemIndex == 0) 120f / lazyListState.firstVisibleItemScrollOffset else 0.5f
-                        translationX =
-                            if (lazyListState.firstVisibleItemScrollOffset < 100 && lazyListState.firstVisibleItemIndex == 0) 0f - lazyListState.firstVisibleItemScrollOffset else -100f
-                    },
-                contentScale = ContentScale.FillWidth,
-            )
-            LazyRow(
-                contentPadding = PaddingValues(start = 16.dp, end = 16.dp), modifier = modifier,
-                state = lazyListState,
-            ) {
-                item {
-                    Box(
-                        modifier = modifier
-                            .height(275.dp)
-                            .width(140.dp)
-                    )
-                }
-                items(items, key = { it.image }) { data ->
-                    CardItemDiscount(
-                        paddingEnd = 10.dp,
-                        paddingTop = 12.dp,
-                        data = data
-                    )
-                }
-            }
-        }
+        CustomImageRow(
+            lazyListState = lazyListState, items = items, imageBgUrl = imageBgUrl,
+            cardWidth = 140.dp,
+            cardHeight = 240.dp,
+            sizeImage = 150.dp
+        )
         Spacer(modifier = modifier.height(8.dp))
         MaxDivider()
+    }
+}
+
+@Composable
+fun CustomImageRow(
+    modifier: Modifier = Modifier,
+    lazyListState: LazyListState,
+    items: List<RowHomeIc>,
+    imageBgUrl: ImageColor,
+    boxHeight: Dp = 270.dp,
+    cardWidth: Dp,
+    cardHeight: Dp,
+    sizeImage: Dp
+) {
+    val colorList = listOf(
+        Color(0xFF00D827),
+        Color(0xFF05A801),
+        Color(0xFFEC6A2A),
+        Color(0xFF7D5335),
+        Color(0xFFC29875),
+    )
+    Box(
+        modifier = modifier
+            .height(boxHeight)
+            .fillMaxWidth()
+            .background(
+                imageBgUrl.color
+            ),
+    ) {
+        Image(
+            painter = rememberAsyncImagePainter(model = imageBgUrl.imageUrl.imgUrl()),
+            contentDescription = "",
+            modifier = modifier
+                .fillMaxHeight()
+                .width(140.dp)
+                .graphicsLayer {
+                    alpha =
+                        if (lazyListState.firstVisibleItemScrollOffset < 500 && lazyListState.firstVisibleItemIndex == 0) 120f / lazyListState.firstVisibleItemScrollOffset else 0.5f
+                    translationX =
+                        if (lazyListState.firstVisibleItemScrollOffset < 100 && lazyListState.firstVisibleItemIndex == 0) 0f - lazyListState.firstVisibleItemScrollOffset else -100f
+                },
+            contentScale = ContentScale.FillWidth,
+        )
+        LazyRow(
+            contentPadding = PaddingValues(start = 16.dp, end = 16.dp), modifier = modifier,
+            state = lazyListState,
+        ) {
+            item {
+                Box(
+                    modifier = modifier
+                        .height(275.dp)
+                        .width(140.dp)
+                )
+            }
+            items(items, key = { it.image }) { data ->
+                CardItemDiscount(
+                    paddingEnd = 10.dp,
+                    paddingTop = 12.dp,
+                    data = data,
+                    cardWidth = cardWidth,
+                    cardHeight = cardHeight,
+                    sizeImage = sizeImage,
+                    colorList = colorList
+                )
+            }
+        }
     }
 }
