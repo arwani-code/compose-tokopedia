@@ -112,13 +112,13 @@ class TkpLocalDataSource @Inject constructor() {
             title = "Serum Wajah",
             subTitle = "Lanjut cari"
         ),
+//        RowHomeIc(
+//            image = "https://images.tokopedia.net/img/cache/200-square/VqbcmM/2021/1/19/d2e3c751-55a9-4ed4-a217-4758d3fa7e8d.jpg.webp?ect=4g",
+//            title = "Soft Case Handphone",
+//            subTitle = "Lanjut browse"
+//        ),
         RowHomeIc(
-            image = "https://images.tokopedia.net/img/cache/200-square/VqbcmM/2021/1/19/d2e3c751-55a9-4ed4-a217-4758d3fa7e8d.jpg.webp?ect=4g",
-            title = "Soft Case Handphone",
-            subTitle = "Lanjut browse"
-        ),
-        RowHomeIc(
-            image = "https://images.tokopedia.net/img/cache/200-square/VqbcmM/2022/3/21/b13e9abf-e969-430d-ae33-5422a86608bf.jpg.webp?ect=4g",
+            image = "https://images.tokopedia.net/img/cache/200-square/VqbcmM/2021/1/19/d2e3c751-55a9-4ed4-a217-4758d3fa7e8d.jpg",
             title = "Celana Dalam Anak",
             subTitle = "Cari lebih banyak"
         ),
@@ -387,6 +387,266 @@ class TkpLocalDataSource @Inject constructor() {
             city = "Jakarta Barat",
             ratingStar = "5.0 | Terjual 750+",
             arrived = "Tiba 12 - 29 Des"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/VqbcmM/2022/9/13/4831435a-5f24-4988-b662-0aff0292af2f.png",
+            subTitle = "ECLE Storage Bag Waterproof Tas Kabel Organizer HDD Case/Pouch",
+            title = "Rp 100.000",
+            discount = "10%",
+            price = "Rp 90.000",
+            city = "Jakarta Selatan",
+            ratingStar = "4.5 | Terjual 100+",
+            arrived = "Tiba 5 - 12 Jan"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/VqbcmM/2023/7/12/e6ae9c3b-d024-47a4-a714-1acffe79d704.jpg",
+            subTitle = "COOGER Alat Pel Karet / Sponge Mop / Spons Mop dengan Rol Besar ",
+            title = "Rp 150.000",
+            discount = "20%",
+            price = "Rp 120.000",
+            city = "Jakarta Utara",
+            ratingStar = "4.8 | Terjual 300+",
+            arrived = "Tiba 8 - 15 Jan"
+        ),
+
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/VqbcmM/2023/3/30/962a48a1-44e4-4917-86f7-251ce215ce0e.jpg",
+            subTitle = "Aonez Stand Hanger Besi Double Rak Gantungan Baju Pakaian 2 Tiang",
+            title = "Rp 50.000",
+            discount = "20%",
+            price = "Rp 62.500",
+            city = "Jakarta Selatan",
+            ratingStar = "4.5 | Terjual 1 rb+",
+            textAltImage = "Sale Day",
+            arrived = "Tiba 5 - 12 Jan"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/hDjmkQ/2023/7/4/045b2174-73c7-44cd-be5d-68be0c33fb4c.jpg",
+            subTitle = "STAND HOLDER HP PENYANGGA lIVE BRODCAST 360 DERAJAT DESKTOP HD25",
+            title = "Rp 300.000",
+            discount = "10%",
+            price = "Rp 333.000",
+            city = "Bandung",
+            ratingStar = "4.8 | Terjual 500+",
+            textAltImage = "Best Seller",
+            arrived = "Tiba 20 - 25 Feb"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/hDjmkQ/2023/3/29/119b2abc-8208-4025-b5a1-3b7aa09bfbed.jpg",
+            subTitle = "Ace - Ataru Set 4 Pcs Corong - Abu-Abu/Biru",
+            title = "Rp 85.000",
+            discount = "5%",
+            price = "Rp 89.500",
+            city = "Surabaya",
+            ratingStar = "4.7 | Terjual 800+",
+            textAltImage = "Limited Stock",
+            arrived = "Tiba 1 - 7 Mar"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/hDjmkQ/2023/1/10/05c8a324-662b-4720-9cdd-69e1ec559944.jpg",
+            subTitle = "Ace - Paso Balon Tinju Minion",
+            title = "Rp 200.000",
+            discount = "15%",
+            price = "Rp 235.000",
+            city = "Medan",
+            ratingStar = "4.6 | Terjual 350+",
+            textAltImage = "Hot Deal",
+            arrived = "Tiba 15 - 22 Apr"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/VqbcmM/2023/2/20/332a663f-3559-4bb3-a9cc-a04a9e298a45.jpg.webp?ect=4g",
+            subTitle = "Aukey Charger PA-T16 2 Ports 39W QC 3.0 - 500076",
+            title = "Rp 120.000",
+            discount = "8%",
+            price = "Rp 130.000",
+            city = "Semarang",
+            ratingStar = "4.9 | Terjual 1.2 rb+",
+            textAltImage = "Super Offer",
+            arrived = "Tiba 10 - 18 May"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/VqbcmM/2023/2/14/4f0e24ea-a69a-4030-b17c-468535036c78.jpg",
+            subTitle = "Deli Hole Puncher / Tang Pembolong Pelubang Sabuk Gesper Kulit DL1919C",
+            title = "Rp 125.900",
+            discount = "14%",
+            price = "Rp 145.000",
+            city = "Jakarta Utara",
+            ratingStar = "4.9 | Terjual 2 rb+",
+            textAltImage = "Super Gadget Day",
+            arrived = "Tiba 12 - 29 Des"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/VqbcmM/2023/7/11/812bb137-b3d5-4e16-b4fb-560fe787e04b.jpg",
+            subTitle = "COOGER Water Spray Mop Alat Pel Semprot Dengan Kain Pel Microfiber",
+            title = "Rp 50.000",
+            discount = "20%",
+            price = "Rp 62.500",
+            city = "Jakarta Selatan",
+            ratingStar = "4.5 | Terjual 1 rb+",
+            textAltImage = "Sale Day",
+            arrived = "Tiba 5 - 12 Jan"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/VqbcmM/2023/5/19/49fb65bb-9916-4e4a-bbd6-fe830b6754b0.jpg",
+            subTitle = "Gaabor Vacuum Cleaner Kapasitas 1.5 Liter Penyedot Debu",
+            title = "Rp 300.000",
+            discount = "10%",
+            price = "Rp 333.000",
+            city = "Bandung",
+            ratingStar = "4.8 | Terjual 500+",
+            textAltImage = "Best Seller",
+            arrived = "Tiba 20 - 25 Feb"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/VqbcmM/2023/6/22/a830f470-74ac-43b2-ab61-e4c123c8a914.png",
+            subTitle = "Starco Timbangan Dapur Timbangan Kopi Digital Stainless 5 kg/0.1g",
+            title = "Rp 180.000",
+            discount = "5%",
+            price = "Rp 189.000",
+            city = "Yogyakarta",
+            ratingStar = "4.6 | Terjual 600+",
+            textAltImage = "Limited Stock",
+            arrived = "Tiba 3 - 10 Nov"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/VqbcmM/2023/7/6/81b1cff8-8dfa-43b1-bb4b-7fa0b3bbbe7c.jpg",
+            subTitle = "Sikat Toilet Golf Silicone // Sikat wc golf // brush toilet",
+            title = "Rp 90.000",
+            discount = "15%",
+            price = "Rp 106.000",
+            city = "Surabaya",
+            ratingStar = "4.7 | Terjual 450+",
+            textAltImage = "Hot Deal",
+            arrived = "Tiba 25 - 30 Dec"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/VqbcmM/2022/9/8/92ac93e8-5616-4cd3-b299-685c814a899e.png",
+            subTitle = "SLEEP CENTER Comforta Elegant Pillow / Bantal",
+            title = "Rp 50.000",
+            discount = "20%",
+            price = "Rp 62.500",
+            city = "Jakarta Selatan",
+            ratingStar = "4.5 | Terjual 1 rb+",
+            textAltImage = "Sale Day",
+            arrived = "Tiba 5 - 12 Jan"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/VqbcmM/2022/10/3/52be6aee-2e30-4977-aec1-af8cf14f6746.png",
+            subTitle = "Uniland Kasur Lipat 90x200 Bonus Tas Kasur - Busa Gulung Lantai Travel",
+            title = "Rp 300.000",
+            discount = "10%",
+            price = "Rp 333.000",
+            city = "Bandung",
+            ratingStar = "4.8 | Terjual 500+",
+            textAltImage = "Best Seller",
+            arrived = "Tiba 20 - 25 Feb"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/hDjmkQ/2023/1/9/52f7604b-bfe3-4ea7-bd7d-3b60e5a1865f.jpg",
+            subTitle = "ACE - Ataru Pouch Travel Mesh Zipper A5 - Oranye",
+            title = "Rp 90.000",
+            discount = "15%",
+            price = "Rp 106.000",
+            city = "Surabaya",
+            ratingStar = "4.7 | Terjual 450+",
+            textAltImage = "Hot Deal",
+            arrived = "Tiba 25 - 30 Dec"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/hDjmkQ/2022/4/26/1e315d7d-da32-409e-ba7c-16f237404242.jpg",
+            subTitle = "Mouse Pad Aukey KM-P1 - 500877",
+            title = "Rp 75.000",
+            discount = "5%",
+            price = "Rp 78.750",
+            city = "Medan",
+            ratingStar = "4.6 | Terjual 300+",
+            textAltImage = "Limited Stock",
+            arrived = "Tiba 3 - 9 Jan"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/300-square/VqbcmM/2023/4/12/02cd04b4-9aac-4760-a7e6-e15a7177618b.jpg",
+            subTitle = "AONEZ Rak Sepatu Susun Sudut, 6-layer Rak Buku Serbaguna, Hitam",
+            title = "Rp 120.000",
+            discount = "8%",
+            price = "Rp 130.000",
+            city = "Semarang",
+            ratingStar = "4.9 | Terjual 1.2 rb+",
+            textAltImage = "Super Offer",
+            arrived = "Tiba 10 - 18 Feb"
+        )
+    )
+    val shoppingCategory = listOf(
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/200/zIWZzz/2022/7/5/08f9e8e2-4815-46aa-b7e7-a1078b38939a.jpg",
+            title = "Makanan & Minuman"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/200/zIWZzz/2022/7/5/e69c41f4-e52f-448c-ac24-3fbf31819ead.jpg",
+            title = "Kecantikan"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/200/zIWZzz/2022/7/5/c97af5f1-346b-44aa-a49d-81550aaa033c.jpg",
+            title = "Buku"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/200/zIWZzz/2022/7/5/47035f29-4468-4123-80d3-b6f76e813c53.jpg",
+            title = "Kesehatan"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/200/zIWZzz/2022/7/5/c4b0f7d1-6e74-464c-b6de-f5a14ddab065.jpg",
+            title = "Perlengkapan Pesta"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/200/zIWZzz/2022/7/5/9f05ff2d-0243-4924-876c-e77fff26ffd8.jpg",
+            title = "Mainan & Hobi"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/200/zIWZzz/2022/7/5/7b571052-3628-428d-bf12-b344593e1a2f.jpg",
+            title = "Handphone & Tablet"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/200/zIWZzz/2022/7/5/68cd2602-be94-4ec1-ade6-6bc7103e9ff6.jpg",
+            title = "Fashion Pria"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/200/zIWZzz/2022/7/5/e5bd27ec-c70a-475f-ada2-dbd0b8f91d44.jpg",
+            title = "Pertukangan"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/200/zIWZzz/2022/7/5/b0cb5596-3022-49dd-9a8c-0081decb5d87.jpg",
+            title = "Fashion Anak & Bayi"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/200/zIWZzz/2022/7/5/6b0cb08f-c366-42e5-a069-4b596d454d42.jpg",
+            title = "Fashion Wanita"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/200/zIWZzz/2022/7/5/33cf7bc5-e9bc-4676-aaeb-2897891a5dcb.jpg",
+            title = "Olahraga"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/200/zIWZzz/2022/7/5/829db53b-ed40-4263-84cf-1d6e229286bb.jpg",
+            title = "Dapur"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/200/zIWZzz/2022/7/5/bbca54ee-9949-4af1-aae3-e5fc396e8b78.jpg",
+            title = "Film & Musik"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/200/zIWZzz/2022/7/5/83b8b97b-c0d1-4927-839c-ed5e04edda2e.jpg",
+            title = "Ibu & Bayi"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/200/zIWZzz/2022/7/5/54dd517b-c778-48b8-8e79-29090306ca85.jpg",
+            title = "Otomotif"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/200/zIWZzz/2022/7/5/8031c8e2-d973-47e9-81ef-5c52dabf4c0e.jpg",
+            title = "Rumah Tangga"
+        ),
+        RowHomeIc(
+            image = "https://images.tokopedia.net/img/cache/200/zIWZzz/2022/7/5/d101fe67-b273-4094-9694-373248dc4858.jpg",
+            title = "Fashion Muslim"
         ),
     )
 }

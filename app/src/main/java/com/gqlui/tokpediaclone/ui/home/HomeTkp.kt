@@ -9,8 +9,10 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
@@ -50,10 +52,14 @@ import com.gqlui.tokpediaclone.data.model.RowHomeIc
 import com.gqlui.tokpediaclone.ui.components.TkpTopAppBar
 import com.gqlui.tokpediaclone.ui.home.components.BoxLazyRow
 import com.gqlui.tokpediaclone.ui.home.components.ContinueCheck
+import com.gqlui.tokpediaclone.ui.home.components.FreeOngkir
 import com.gqlui.tokpediaclone.ui.home.components.GridRowSchool
+import com.gqlui.tokpediaclone.ui.home.components.InterestingPromo
 import com.gqlui.tokpediaclone.ui.home.components.PromoRemainder
 import com.gqlui.tokpediaclone.ui.home.components.PromoToday
 import com.gqlui.tokpediaclone.ui.home.components.RowIconImage
+import com.gqlui.tokpediaclone.ui.home.components.ShopInView
+import com.gqlui.tokpediaclone.ui.home.components.ShoppingCategory
 import com.gqlui.tokpediaclone.ui.home.components.TopRowBar
 import com.gqlui.tokpediaclone.ui.home.components.VitaminAndSupplement
 import com.gqlui.tokpediaclone.ui.theme.PrimaryColor
@@ -97,6 +103,7 @@ fun HomeTkp(
     val vitaminAndSupplements by viewModel.vitaminAndSupplements.collectAsStateWithLifecycle()
     val promoToday by viewModel.promoToday.collectAsStateWithLifecycle()
     val promoReminders by viewModel.promoReminders.collectAsStateWithLifecycle()
+    val shoppingCategories by viewModel.shoppingCategories.collectAsStateWithLifecycle()
 
     DisposableEffect(key1 = Unit, effect = {
         onDispose {
@@ -123,6 +130,7 @@ fun HomeTkp(
                 loading = true
                 delay(3000)
                 loading = false
+                viewModel.refreshDataState()
             }
         })
 
@@ -136,7 +144,7 @@ fun HomeTkp(
         },
     ) { innerPadding ->
         BoxWithConstraints(
-            modifier = modifier.fillMaxSize()
+            modifier = modifier.fillMaxSize(),
         ) {
             val maxHeight = maxHeight
             Column(
@@ -161,7 +169,8 @@ fun HomeTkp(
                     promoToday = promoToday,
                     loading = loading,
                     viewModel = viewModel,
-                    promoReminders = promoReminders
+                    promoReminders = promoReminders,
+                    shoppingCategories = shoppingCategories
                 )
             }
             PullRefreshIndicator(
@@ -192,7 +201,8 @@ fun HomeContent(
     vitaminAndSupplement: List<RowHomeIc>,
     promoToday: List<RowHomeIc>,
     promoReminders: List<RowHomeIc>,
-    viewModel: HomeViewModel
+    viewModel: HomeViewModel,
+    shoppingCategories: List<RowHomeIc>
 ) {
     Column(
         modifier = modifier
@@ -203,11 +213,14 @@ fun HomeContent(
         RowIconImage(rowIcs = rowIcs, items = imageHorizontal)
         ContinueCheck(continueCheckState = continueCheckState)
         BoxLazyRow(items = discountSpecial, imageBgUrl = viewModel.bgImageSpecialDiscount)
+        FreeOngkir(freeOngkirs = promoReminders)
         GridRowSchool(needsSchool = needsSchool)
         VitaminAndSupplement(vitaminAndSupplements = vitaminAndSupplement)
         PromoToday(data = promoToday)
         PromoRemainder(promoReminders = promoReminders, viewModel = viewModel)
-
+        ShopInView(data = promoReminders)
+        InterestingPromo(data = promoReminders, viewModel = viewModel)
+        ShoppingCategory(data = shoppingCategories)
     }
 }
 

@@ -43,7 +43,7 @@ fun PromoToday(
             contentPadding = PaddingValues(horizontal = 10.dp),
             modifier = modifier.fillMaxSize()
         ) {
-            items(data, key = { it.image }) {
+            items(data,  /* key = { item -> item.image } */) {
                 Card(
                     shape = RoundedCornerShape(12.dp),
                     modifier = modifier

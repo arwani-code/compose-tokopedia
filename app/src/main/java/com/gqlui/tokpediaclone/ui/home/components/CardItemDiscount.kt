@@ -30,12 +30,14 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.LineHeightStyle
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.compose.AsyncImage
 import coil.compose.rememberAsyncImagePainter
 import com.gqlui.tokpediaclone.base.rememberVectorOfficialStore
 import com.gqlui.tokpediaclone.data.model.RowHomeIc
@@ -46,20 +48,19 @@ fun CardItemDiscount(
     paddingTop: Dp = 0.dp,
     paddingEnd: Dp = 12.dp,
     paddingBottom: Dp = 0.dp,
-    data: RowHomeIc = RowHomeIc(),
+    data: RowHomeIc,
     cardWidth: Dp,
     cardHeight: Dp,
     sizeImage: Dp,
-    colorList: List<Color> = listOf()
+    colorList: List<Color>
 ) {
     Card(
         modifier = modifier
             .padding(end = paddingEnd, top = paddingTop, bottom = paddingBottom)
             .width(cardWidth)
             .height(cardHeight),
-        shape = RoundedCornerShape(8.dp),
         elevation = CardDefaults.cardElevation(
-            defaultElevation = 4.dp
+            defaultElevation = 2.dp
         ),
         colors = CardDefaults.cardColors(
             containerColor = Color.White
@@ -220,6 +221,21 @@ fun CardItemDiscount(
                             letterSpacing = 0.sp
                         )
                     }
+                    Box(
+                        modifier = modifier.fillMaxWidth(),
+                        contentAlignment = Alignment.TopStart
+                    ) {
+                        AsyncImage(
+                            model = "https://images.tokopedia.net/img/bo-reg-0k.png",
+                            contentDescription = "",
+                            modifier = modifier
+                                .fillMaxWidth()
+                                .height(20.dp)
+                                .graphicsLayer {
+                                    translationX = -52f
+                                }
+                        )
+                    }
                 }
                 if (data.arrived.isNotEmpty()) {
                     Text(
@@ -247,6 +263,7 @@ fun ItemDiscountPreview() {
         ),
         cardWidth = 140.dp,
         cardHeight = 240.dp,
-        sizeImage = 150.dp
+        sizeImage = 150.dp,
+        colorList = emptyList()
     )
 }

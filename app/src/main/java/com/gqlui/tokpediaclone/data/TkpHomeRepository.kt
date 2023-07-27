@@ -17,5 +17,5 @@ class TkpHomeRepository @Inject constructor(
     val vitaminAndSupplements: List<RowHomeIc> = tkpLocalDataSource.vitaminAndSupplements
     val promoToday: List<RowHomeIc> = tkpLocalDataSource.promoToday
     val promoReminders: List<RowHomeIc> = tkpLocalDataSource.promoReminders
-
+    val shoppingCategory: List<RowHomeIc> = tkpLocalDataSource.shoppingCategory
 }

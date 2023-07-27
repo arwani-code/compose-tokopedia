@@ -7,21 +7,20 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.gqlui.tokpediaclone.data.model.RowHomeIc
 import com.gqlui.tokpediaclone.ui.home.HomeViewModel
-import com.gqlui.tokpediaclone.ui.utils.imgUrl
 
 @Composable
-fun PromoRemainder(
+fun InterestingPromo(
     modifier: Modifier = Modifier,
-    promoReminders: List<RowHomeIc>,
+    data: List<RowHomeIc>,
     viewModel: HomeViewModel
 ) {
     val lazyListState = rememberLazyListState()
     Column {
-        TitleSection(title = "Jangan lewatkan promonya")
+        TitleSection(title = "Promo Menarik")
         CustomImageRow(
             lazyListState = lazyListState,
-            items = promoReminders.shuffled(),
-            imageBgUrl = viewModel.bgImagePromoReminders,
+            items = data.shuffled(),
+            imageBgUrl = viewModel.bgImageInterestingPromo,
             boxHeight = 370.dp,
             cardWidth = 135.dp,
             cardHeight = 335.dp,
