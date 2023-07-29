@@ -40,7 +40,7 @@ fun FreeOngkir(
         Color(0xFF7D5335),
         Color(0xFFC29875),
     )
-    Box(modifier = modifier.fillMaxWidth()) {
+    Box(modifier = modifier.padding(bottom = 16.dp).fillMaxWidth()) {
         Box(
             modifier = modifier
                 .height(150.dp)

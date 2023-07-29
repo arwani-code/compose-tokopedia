@@ -30,7 +30,7 @@ fun GridRowSchool(
 ) {
     val context = LocalContext.current
     Column(modifier = modifier.fillMaxWidth()) {
-        TitleSection(title = "Ribuan Kebutuhan Sekolah", canShowTextButton = false)
+        TitleSection(title = "Ribuan Kebutuhan Sekolah", canShowTextButton = false, paddingVertical = 10.dp)
         Box(
             modifier = modifier
                 .fillMaxWidth()

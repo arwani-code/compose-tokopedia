@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyHorizontalGrid
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -25,7 +26,7 @@ fun ShoppingCategory(
     data: List<RowHomeIc>,
 ) {
     val scrollState = rememberLazyGridState()
-    Column {
+    Column(modifier = modifier.padding(bottom = 32.dp)) {
         TitleSection(title = "Kategori inspirasi belanjamu")
         LazyHorizontalGrid(
             rows = GridCells.Fixed(2),
@@ -47,7 +48,7 @@ fun ShoppingCategory(
                     }
                 }),
             state = scrollState,
-            contentPadding = PaddingValues(12.dp),
+            contentPadding = PaddingValues(horizontal = 12.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             items(data, key = { it.image }) {

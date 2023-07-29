@@ -1,8 +1,8 @@
 package com.gqlui.tokpediaclone.ui.utils
 
-import androidx.compose.animation.Animatable
 import androidx.compose.animation.core.CubicBezierEasing
-import androidx.compose.animation.core.RepeatMode
+import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.infiniteRepeatable
 import androidx.compose.animation.core.keyframes
@@ -10,21 +10,20 @@ import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.pager.PagerState
 import androidx.compose.foundation.progressSemantics
-import androidx.compose.material.CircularProgressIndicator
-import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.ProgressIndicatorDefaults
-import androidx.compose.material.pullrefresh.PullRefreshState
-import androidx.compose.material.pullrefresh.pullRefreshIndicatorTransform
+import androidx.compose.material3.TabPosition
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.composed
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.draw.drawWithContent
 import androidx.compose.ui.geometry.CornerRadius
@@ -35,6 +34,9 @@ import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.clipRect
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.platform.debugInspectorInfo
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import com.gqlui.tokpediaclone.ui.theme.PrimaryColor
@@ -83,7 +85,7 @@ fun CustomProgressIndicator(
     backgroundColor: Color = Color(0xFFDFDFDE),
     strokeCap: StrokeCap = StrokeCap.Butt,
 ) {
-    val infiniteTransition = rememberInfiniteTransition()
+    val infiniteTransition = rememberInfiniteTransition(label = "")
     val firstLineHead by infiniteTransition.animateFloat(
         0f,
         1f,
@@ -93,7 +95,7 @@ fun CustomProgressIndicator(
                 0f at 0 with CubicBezierEasing(0f, -0.6f, 0f, 1f)
                 1f at 400
             }
-        )
+        ), label = ""
     )
     val firstLineTail by infiniteTransition.animateFloat(
         0f,
@@ -104,7 +106,7 @@ fun CustomProgressIndicator(
                 0f at 0 with CubicBezierEasing(0f, -0.6f, 1f, 1f)
                 1f at 900
             }
-        )
+        ), label = ""
     )
     val secondLineHead by infiniteTransition.animateFloat(
         0f,
@@ -115,7 +117,7 @@ fun CustomProgressIndicator(
                 0f at 1000 with CubicBezierEasing(1f, 0f, 0f, 1f)
                 1f at 1000
             }
-        )
+        ), label = ""
     )
     val secondLineTail by infiniteTransition.animateFloat(
         0f,
@@ -126,7 +128,7 @@ fun CustomProgressIndicator(
                 0f at 433 with CubicBezierEasing(0f, 0f, 0f, 1f)
                 1f at 1000
             }
-        )
+        ), label = ""
     )
     Canvas(
         modifier
@@ -204,4 +206,29 @@ private fun DrawScope.drawLinearIndicator(
 
 fun String.imgUrl(): String {
     return "https://images.tokopedia.net/img/cache/$this"
+}
+
+
+fun Modifier.customTabIndicatorOffset(
+    currentTabPosition: TabPosition,
+    tabWidth: Dp
+): Modifier = composed(
+    inspectorInfo = debugInspectorInfo {
+        name = "customTabIndicatorOffset"
+        value = currentTabPosition
+    }
+) {
+    val currentTabWidth by animateDpAsState(
+        targetValue = tabWidth,
+        animationSpec = tween(durationMillis = 250, easing = FastOutSlowInEasing), label = ""
+    )
+    val indicatorOffset by animateDpAsState(
+        targetValue = ((currentTabPosition.left + currentTabPosition.right - tabWidth) / 2),
+        animationSpec = tween(durationMillis = 250, easing = FastOutSlowInEasing), label = ""
+    )
+    fillMaxWidth()
+        .wrapContentSize(Alignment.TopStart)
+        .offset(x = indicatorOffset)
+        .width(currentTabWidth)
+//        .graphicsLayer { translationY =  }
 }

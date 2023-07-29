@@ -36,7 +36,7 @@ fun ContinueCheck(
     )
     Box(modifier = modifier.fillMaxWidth()) {
         Column {
-            TitleSection(title = "Lanjut cek ini, yuk", canShowTextButton = false)
+            TitleSection(title = "Lanjut cek ini, yuk", canShowTextButton = false, paddingVertical = 10.dp)
             LazyRow(
                 contentPadding = PaddingValues(horizontal = 16.dp),
                 state = scrollState,

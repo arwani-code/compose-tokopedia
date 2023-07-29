@@ -34,7 +34,7 @@ fun VitaminAndSupplement(
 ) {
     val context = LocalContext.current
     Column {
-        TitleSection(title = "Vitamin dan Suplemen", paddingVertical = 0.dp)
+        TitleSection(title = "Vitamin dan Suplemen")
         LazyVerticalGrid(
             columns = GridCells.Fixed(3),
             modifier = modifier.height(270.dp),
@@ -58,7 +58,7 @@ fun TitleSection(
     modifier: Modifier = Modifier,
     title: String,
     canShowTextButton: Boolean = true,
-    paddingVertical: Dp = 10.dp
+    paddingVertical: Dp = 0.dp
 ) {
     Row(
         modifier = modifier
