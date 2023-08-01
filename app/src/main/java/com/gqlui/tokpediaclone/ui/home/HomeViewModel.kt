@@ -67,6 +67,13 @@ class HomeViewModel @Inject constructor(
             Color(0xFF06C4F0)
         )
     )
+    val bgImagePromoReminders2 = ImageColor(
+        imageUrl = "200/PYbRbC/2023/7/28/48bab7f5-06ec-470b-8933-cc87160f62e7.png",
+        color = listOf(
+            Color(0xFF06DD0F),
+            Color(0xFF06DD0F)
+        )
+    )
     val bgImageInterestingPromo = ImageColor(
         imageUrl = "200/PYbRbC/2023/7/26/b865dfd5-66c1-4487-9cd4-89e98c19f085.jpg",
         color = listOf(
@@ -109,6 +116,7 @@ class HomeViewModel @Inject constructor(
             "Gadget",
             "Cleanser Waiah"
         )
+
 }
 
 data class ImageColor(

@@ -28,12 +28,12 @@ import androidx.compose.ui.unit.sp
 import com.gqlui.tokpediaclone.ui.utils.customTabIndicatorOffset
 
 @Composable
-fun HomScrollableTabRow(
+fun HomeScrollableTabRow(
     modifier: Modifier = Modifier,
     tabs: List<String>,
     selectedTabIndex: Int,
     onTabClick: (Int) -> Unit,
-    tabsHeight: Dp
+    tabsHeight: Dp,
 ) {
     val density = LocalDensity.current
     val tabWidths = remember {
@@ -43,9 +43,42 @@ fun HomScrollableTabRow(
         }
         tabWidthStateList
     }
+
+    val tabBackground = listOf(
+        listOf(
+            Color(0xFF9F206E),
+            Color(0xFFAC2077),
+            Color(0xFFB3207E),
+            Color(0xFFBC2183),
+        ),
+        listOf(
+            Color(0xFFEF9C10),
+            Color(0xFFF4A40D),
+            Color(0xFFF8AF0A),
+            Color(0xFFFCBA04),
+        ),
+        listOf(
+            Color(0xFF562292),
+            Color(0xFF60219D),
+            Color(0xFF6B21A7),
+            Color(0xFF7520B3),
+        ),
+        listOf(
+            Color(0xFF0C84A9),
+            Color(0xFF0F91A9),
+            Color(0xFF18A3AA),
+            Color(0xFF19A9A9),
+        ),
+        listOf(
+            Color(0xFF189547),
+            Color(0xFF279F46),
+            Color(0xFF33A948),
+            Color(0xFF3BAE49),
+        ),
+    )
     ScrollableTabRow(
         selectedTabIndex = selectedTabIndex,
-        edgePadding = 8.dp,
+        edgePadding = 16.dp,
         indicator = { tabPositions ->
             TabRowDefaults.Indicator(
                 modifier = Modifier
@@ -62,7 +95,7 @@ fun HomScrollableTabRow(
         },
         divider = {
             Divider(color = Color.White)
-        }
+        },
     ) {
         tabs.forEachIndexed { tabIndex, tab ->
             Card(
@@ -95,12 +128,7 @@ fun HomScrollableTabRow(
                         .fillMaxSize()
                         .background(
                             brush = Brush.horizontalGradient(
-                                colors = listOf(
-                                    Color(0xFF9F206E),
-                                    Color(0xFFAC2077),
-                                    Color(0xFFB3207E),
-                                    Color(0xFFBC2183),
-                                )
+                                colors = if (tabIndex <= 4) tabBackground[tabIndex] else tabBackground.first()
                             )
                         )
                 )

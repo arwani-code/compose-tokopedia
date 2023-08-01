@@ -72,6 +72,7 @@ fun TkpTopAppBar(
                 BasicTextField(
                     value = value,
                     onValueChange = { value = it },
+                    enabled = false,
                     decorationBox = { innerTextField ->
                         Row(
                             Modifier
