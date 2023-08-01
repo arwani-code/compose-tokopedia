@@ -1,5 +1,6 @@
 package com.gqlui.tokpediaclone.ui.home.components
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -16,6 +17,7 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
@@ -33,7 +35,7 @@ fun VitaminAndSupplement(
     vitaminAndSupplements: List<RowHomeIc>
 ) {
     val context = LocalContext.current
-    Column {
+    Column(modifier = modifier.background(Color.White)) {
         TitleSection(title = "Vitamin dan Suplemen")
         LazyVerticalGrid(
             columns = GridCells.Fixed(3),

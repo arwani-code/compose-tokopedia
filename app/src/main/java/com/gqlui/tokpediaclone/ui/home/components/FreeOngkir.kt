@@ -40,14 +40,14 @@ fun FreeOngkir(
         Color(0xFF7D5335),
         Color(0xFFC29875),
     )
-    Box(modifier = modifier.padding(bottom = 16.dp).fillMaxWidth()) {
+    Box(modifier = modifier.fillMaxWidth().background(Color.White)) {
         Box(
             modifier = modifier
                 .height(150.dp)
                 .fillMaxWidth()
                 .background(color = Color(0xFF07AC10))
         )
-        Column(modifier = modifier.fillMaxWidth()) {
+        Column(modifier = modifier.padding(bottom = 8.dp).fillMaxWidth()) {
             Row(
                 modifier = modifier
                     .padding(horizontal = 16.dp, vertical = 12.dp)

@@ -1,5 +1,6 @@
 package com.gqlui.tokpediaclone.ui.home.components
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -27,7 +28,7 @@ fun ShopInView(
         Color(0xFF7D5335),
         Color(0xFFC29875),
     )
-    Column(modifier = modifier.fillMaxWidth()) {
+    Column(modifier = modifier.fillMaxWidth().background(Color.White)) {
         TitleSection(title = "Dari toko yang dilihat")
         LazyRow(contentPadding = PaddingValues(horizontal = 12.dp)) {
             items(data /* key = {it.image}*/) {

@@ -89,6 +89,26 @@ class HomeViewModel @Inject constructor(
         _promoRemindersState.value = tkpRepository.promoReminders.shuffled()
         _shoppingCategoryState.value = tkpRepository.shoppingCategory
     }
+
+    val colorList = listOf(
+        Color(0xFF00D827),
+        Color(0xFF05A801),
+        Color(0xFFEC6A2A),
+        Color(0xFF7D5335),
+        Color(0xFFC29875),
+    )
+
+    val listTitle =
+        listOf(
+            "For Alexandra",
+            "Spesial di WIB",
+            "Back to School",
+            "Special Discount",
+            "Aktivitasmu",
+            "Laptop",
+            "Gadget",
+            "Cleanser Waiah"
+        )
 }
 
 data class ImageColor(

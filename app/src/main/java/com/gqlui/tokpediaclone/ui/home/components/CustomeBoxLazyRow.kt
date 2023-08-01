@@ -66,7 +66,7 @@ fun BoxLazyRow(
         }
         timeSecond--
     })
-    Column(modifier = modifier.padding(top = 14.dp)) {
+    Column(modifier = modifier.background(Color.White)) {
         Text(
             text = "Kejar Diskon Spesial",
             fontWeight = FontWeight.Bold,

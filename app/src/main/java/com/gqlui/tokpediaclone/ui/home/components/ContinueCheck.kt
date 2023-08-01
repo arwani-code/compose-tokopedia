@@ -1,11 +1,14 @@
 package com.gqlui.tokpediaclone.ui.home.components
 
 import android.util.Log
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.LazyRow
@@ -34,8 +37,10 @@ fun ContinueCheck(
         Color(0xFF7D5335),
         Color(0xFFC29875),
     )
-    Box(modifier = modifier.fillMaxWidth()) {
-        Column {
+    Box(modifier = modifier
+        .fillMaxWidth()
+        .background(Color.White)) {
+        Column(modifier = modifier.padding(vertical = 8.dp)) {
             TitleSection(title = "Lanjut cek ini, yuk", canShowTextButton = false, paddingVertical = 10.dp)
             LazyRow(
                 contentPadding = PaddingValues(horizontal = 16.dp),

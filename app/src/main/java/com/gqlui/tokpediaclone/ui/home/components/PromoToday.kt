@@ -1,5 +1,6 @@
 package com.gqlui.tokpediaclone.ui.home.components
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -20,6 +21,7 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
@@ -37,7 +39,7 @@ fun PromoToday(
     data: List<RowHomeIc>
 ) {
     val context = LocalContext.current
-    Column(modifier = modifier.fillMaxSize()) {
+    Column(modifier = modifier.fillMaxSize().background(Color.White)) {
         TitleSection(title = "Pilihan Promo Hari ini", paddingVertical = 0.dp)
         LazyRow(
             contentPadding = PaddingValues(horizontal = 10.dp),
