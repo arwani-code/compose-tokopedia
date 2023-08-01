@@ -42,8 +42,12 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.input.nestedscroll.NestedScrollConnection
+import androidx.compose.ui.input.nestedscroll.NestedScrollSource
+import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -57,6 +61,7 @@ import com.gqlui.tokpediaclone.ui.home.components.FreeOngkir
 import com.gqlui.tokpediaclone.ui.home.components.GridRowSchool
 import com.gqlui.tokpediaclone.ui.home.components.HomScrollableTabRow
 import com.gqlui.tokpediaclone.ui.home.components.InterestingPromo
+import com.gqlui.tokpediaclone.ui.home.components.ListLazyPager
 import com.gqlui.tokpediaclone.ui.home.components.PromoRemainder
 import com.gqlui.tokpediaclone.ui.home.components.PromoToday
 import com.gqlui.tokpediaclone.ui.home.components.RowIconImage
@@ -194,6 +199,14 @@ private fun HomeContent(
 
     LazyColumn(
         modifier = modifier
+            .nestedScroll(object : NestedScrollConnection {
+                override fun onPreScroll(available: Offset, source: NestedScrollSource): Offset {
+                    return if (available.y > 0) Offset.Zero else Offset(
+                        x = 0f,
+                        y = -scrollState.dispatchRawDelta(-available.y)
+                    )
+                }
+            })
             .fillMaxSize()
             .background(PrimaryColor),
         state = scrollState
@@ -305,33 +318,5 @@ private fun HomeContent(
     }
 }
 
-@Composable
-fun ListLazyPager(
-    modifier: Modifier = Modifier, icList: List<RowHomeIc>,
-    colorList: List<Color>
-) {
-    LazyVerticalStaggeredGrid(
-        columns = StaggeredGridCells.Fixed(2),
-        modifier = modifier
-            .height((icList.size * 70).dp)
-            .background(Color.White),
-        contentPadding = PaddingValues(16.dp),
-        horizontalArrangement = Arrangement.spacedBy(16.dp),
-        verticalItemSpacing = 16.dp
-    ) {
-        itemsIndexed(icList) { index, data ->
-            CardItemDiscount(
-                cardWidth = 100.dp,
-                cardHeight = if (index % 2 != 1) 335.dp else 360.dp,
-                sizeImage = 130.dp,
-                data = data,
-                colorList = colorList,
-                paddingBottom = 0.dp,
-                paddingEnd = 0.dp,
-                paddingTop = 0.dp
-            )
-        }
-    }
-}
 
 
