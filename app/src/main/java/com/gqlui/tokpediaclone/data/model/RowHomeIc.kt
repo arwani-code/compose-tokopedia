@@ -1,7 +1,5 @@
 package com.gqlui.tokpediaclone.data.model
 
-import android.media.Rating
-
 
 data class RowHomeIc(
     val image: String = "",

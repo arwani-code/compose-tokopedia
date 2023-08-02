@@ -1,6 +1,5 @@
 package com.gqlui.tokpediaclone.data
 
-import androidx.compose.ui.graphics.Color
 import com.gqlui.tokpediaclone.data.model.RowHomeIc
 import javax.inject.Inject
 

@@ -34,7 +34,6 @@ import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.clipRect
-import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.debugInspectorInfo
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.LayoutDirection
@@ -230,5 +229,4 @@ fun Modifier.customTabIndicatorOffset(
         .wrapContentSize(Alignment.TopStart)
         .offset(x = indicatorOffset)
         .width(currentTabWidth)
-//        .graphicsLayer { translationY =  }
 }

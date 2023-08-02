@@ -10,9 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.gqlui.tokpediaclone.data.model.RowHomeIc
-import com.gqlui.tokpediaclone.ui.home.HomeViewModel
 import com.gqlui.tokpediaclone.ui.home.ImageColor
-import com.gqlui.tokpediaclone.ui.utils.imgUrl
 
 @Composable
 fun PromoRemainder(

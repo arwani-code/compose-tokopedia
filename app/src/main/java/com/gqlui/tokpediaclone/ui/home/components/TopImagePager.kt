@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -31,7 +30,6 @@ import androidx.compose.ui.util.lerp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.gqlui.tokpediaclone.ui.theme.PrimaryColor
-import com.gqlui.tokpediaclone.ui.utils.wormTransition
 import kotlin.math.absoluteValue
 
 @OptIn(ExperimentalFoundationApi::class)

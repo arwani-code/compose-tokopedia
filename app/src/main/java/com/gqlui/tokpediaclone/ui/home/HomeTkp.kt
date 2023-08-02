@@ -1,7 +1,5 @@
 package com.gqlui.tokpediaclone.ui.home
 
-import android.os.Build.VERSION.SDK_INT
-import android.util.Log
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -32,7 +30,6 @@ import androidx.compose.material.pullrefresh.pullRefresh
 import androidx.compose.material.pullrefresh.rememberPullRefreshState
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
@@ -61,7 +58,6 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.ImageLoader
 import coil.compose.AsyncImage
-import coil.decode.GifDecoder
 import coil.decode.ImageDecoderDecoder
 import coil.request.ImageRequest
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
@@ -346,7 +342,7 @@ private fun HomeContent(
 }
 
 @Composable
-fun DragImageBox(
+private fun DragImageBox(
     modifier: Modifier = Modifier,
     innerPadding: PaddingValues
 ) {
@@ -361,17 +357,9 @@ fun DragImageBox(
     }
     val size = Size()
     val screenHeight = size.height()
-    val screenWidth = size.width() * 2.2
+    val screenWidth = size.width()
     var offsetX by remember { mutableFloatStateOf(screenWidth.toFloat()) }
     var offsetY by remember { mutableFloatStateOf(screenHeight.toFloat()) }
-
-    LaunchedEffect(key1 = isHide, key2 = offsetX, key3 = offsetY, block = {
-        Log.i("SKDMNKDMK", "offsetX: ${offsetX.toInt()}")
-        when {
-            isHide -> offsetX = (screenWidth * 2.5).toFloat()
-//            else -> offsetX = (screenWidth * 2.1).toFloat()
-        }
-    })
 
     Box(
         modifier = Modifier
